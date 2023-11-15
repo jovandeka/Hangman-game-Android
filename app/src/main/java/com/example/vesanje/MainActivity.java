@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView guessesTextView;
     private TextView categoryTextView;
     private GridLayout keyboardGrid;
-    private AppCompatButton changeCategoryButton;
+    private ImageView backImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         guessesTextView = findViewById(R.id.guessesTextView);
         categoryTextView = findViewById(R.id.categoryTextView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
-        changeCategoryButton = findViewById(R.id.changeCategoryButton);
+        backImageView = findViewById(R.id.backImageView);
 
         Intent intent = getIntent();
         if (intent.hasExtra("category")) {
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupKeyboard();
 
-        changeCategoryButton.setOnClickListener(new View.OnClickListener() {
+        backImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, IntroActivity.class);

@@ -7,13 +7,15 @@
     tools:context=".MainActivity"
     android:background="@color/black">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/changeCategoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:textStyle="bold"
-        style="@style/ChangeCategoryButton" />
+    <ImageView
+        android:id="@+id/backImageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/undo" />
 
     <TextView
         android:id="@+id/wordTextView"
@@ -21,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:textSize="50sp"
         android:text="_ _ _ _ _"/>
 
@@ -231,7 +233,6 @@
                 android:text="M" />
 
         </GridLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

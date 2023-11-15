@@ -33,7 +33,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,16 +43,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guessFruitButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guessFruitButton"
+            app:srcCompat="@drawable/apple" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/guessFruitButton"
             style="@style/CategoryButton"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_below="@id/titleTextView"
             android:text="GUESS THE FRUIT"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guessAnimalButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guessAnimalButton"
+            app:srcCompat="@drawable/pawprint" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/guessAnimalButton"
@@ -64,7 +88,21 @@
             android:text="GUESS THE ANIMAL"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guessFruitButton" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guessColorsButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guessColorsButton"
+            app:srcCompat="@drawable/color_palette" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/guessColorsButton"
@@ -76,7 +114,21 @@
             android:text="GUESS THE COLOR"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guessAnimalButton" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guessRandomButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guessRandomButton"
+            app:srcCompat="@drawable/dice" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/guessRandomButton"
@@ -88,7 +140,11 @@
             android:text="GUESS RANDOM"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guessColorsButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
