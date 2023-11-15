@@ -1,13 +1,16 @@
 package com.example.vesanje;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import java.util.Random;
 
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView guessesTextView;
     private TextView categoryTextView;
     private GridLayout keyboardGrid;
+    private AppCompatButton changeCategoryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         guessesTextView = findViewById(R.id.guessesTextView);
         categoryTextView = findViewById(R.id.categoryTextView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
+        changeCategoryButton = findViewById(R.id.changeCategoryButton);
 
         Intent intent = getIntent();
         if (intent.hasExtra("category")) {
@@ -50,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
         displayGuesses();
 
         setupKeyboard();
+
+        changeCategoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
     }
 
     private void loadWordList(String category) {
@@ -173,10 +187,5 @@ public class MainActivity extends AppCompatActivity {
                 child.setEnabled(false);
             }
         }
-    }
-    public void changeCategory(View view) {
-        Intent intent = new Intent(this, IntroActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

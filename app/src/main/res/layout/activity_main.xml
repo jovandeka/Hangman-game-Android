@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:text="back"
         android:textStyle="bold"
-        android:onClick="changeCategory"
         style="@style/ChangeCategoryButton" />
 
     <TextView
