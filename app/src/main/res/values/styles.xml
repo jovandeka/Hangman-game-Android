@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="KeyboardTextView">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/keyboard_button_bg</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
