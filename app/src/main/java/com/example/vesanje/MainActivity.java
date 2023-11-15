@@ -8,10 +8,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
-    private String secretWord = "hangman";
-    private StringBuilder displayWord = new StringBuilder("_______");
+    private String secretWord;
+    private StringBuilder displayWord;
     private int remainingGuesses = 6;
 
     private TextView wordTextView;
@@ -31,10 +33,21 @@ public class MainActivity extends AppCompatActivity {
         guessesTextView = findViewById(R.id.guessesTextView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
 
+        String[] hangmanWords = getResources().getStringArray(R.array.hangman_words);
+        secretWord = getRandomWord(hangmanWords);
+
+        displayWord = new StringBuilder("_".repeat(secretWord.length()));
+
         updateWordDisplay();
         displayGuesses();
 
         setupKeyboard();
+    }
+
+    private String getRandomWord(String[] words) {
+        Random random = new Random();
+        int index = random.nextInt(words.length);
+        return words[index];
     }
 
     private void setupKeyboard() {
@@ -111,9 +124,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetGame() {
-        secretWord = "hangman";
-        displayWord = new StringBuilder("_______");
+        String[] hangmanWords = getResources().getStringArray(R.array.hangman_words);
+        secretWord = getRandomWord(hangmanWords);
+
+        displayWord = new StringBuilder("_".repeat(secretWord.length()));
         remainingGuesses = 6;
+        
         EndTextView.setText("");
         EndWordTextView.setText("");
 

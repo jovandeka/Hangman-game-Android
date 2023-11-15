@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Vesanje</string>
+    <string-array name="hangman_words">
+        <item>programming</item>
+        <item>android</item>
+        <item>hangman</item>
+        <item>java</item>
+
+    </string-array>
 </resources>
