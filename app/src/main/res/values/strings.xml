@@ -1,10 +1,207 @@
 <resources>
     <string name="app_name">Vesanje</string>
-    <string-array name="hangman_words">
+
+    <string-array name="fruit">
+        <!-- fruits -->
+        <item>apple</item>
+        <item>banana</item>
+        <item>orange</item>
+        <item>grape</item>
+        <item>kiwi</item>
+        <item>mango</item>
+        <item>strawberry</item>
+        <item>watermelon</item>
+        <item>pineapple</item>
+        <item>blueberry</item>
+        <item>peach</item>
+        <item>pear</item>
+        <item>cherry</item>
+        <item>plum</item>
+        <item>raspberry</item>
+        <item>avocado</item>
+        <item>coconut</item>
+        <item>blackberry</item>
+        <item>pomegranate</item>
+        <item>melon</item>
+        <item>apricot</item>
+        <item>fig</item>
+        <item>cantaloupe</item>
+        <item>cranberry</item>
+        <item>date</item>
+        <item>elderberry</item>
+        <item>grapefruit</item>
+        <item>guava</item>
+        <item>lemon</item>
+        <item>lime</item>
+        <item>kiwifruit</item>
+        <item>nectarine</item>
+        <item>passionfruit</item>
+        <item>papaya</item>
+        <item>persimmon</item>
+        <item>papaya</item>
+        <item>tangerine</item>
+        <item>apricot</item>
+        <item>dragonfruit</item>
+    </string-array>
+
+    <string-array name="animal">
+        <!-- animals -->
+        <item>dog</item>
+        <item>cat</item>
+        <item>elephant</item>
+        <item>giraffe</item>
+        <item>lion</item>
+        <item>tiger</item>
+        <item>zebra</item>
+        <item>monkey</item>
+        <item>kangaroo</item>
+        <item>koala</item>
+        <item>panda</item>
+        <item>cheetah</item>
+        <item>rhinoceros</item>
+        <item>hippopotamus</item>
+        <item>crocodile</item>
+        <item>alligator</item>
+        <item>gazelle</item>
+        <item>leopard</item>
+        <item>parrot</item>
+        <item>peacock</item>
+        <item>penguin</item>
+        <item>hedgehog</item>
+        <item>armadillo</item>
+        <item>buffalo</item>
+        <item>chameleon</item>
+        <item>chimpanzee</item>
+        <item>jaguar</item>
+        <item>lemur</item>
+        <item>orangutan</item>
+        <item>ostrich</item>
+        <item>panther</item>
+        <item>platypus</item>
+        <item>porcupine</item>
+        <item>quokka</item>
+        <item>reindeer</item>
+        <item>salamander</item>
+        <item>sloth</item>
+        <item>tarantula</item>
+        <item>weasel</item>
+        <item>wombat</item>
+        <item>narwhal</item>
+        <item>mongoose</item>
+        <item>lynx</item>
+        <item>hyena</item>
+        <item>gibbon</item>
+        <item>anteater</item>
+    </string-array>
+
+    <string-array name="color">
+        <!-- colors -->
+        <item>blue</item>
+        <item>red</item>
+        <item>green</item>
+        <item>yellow</item>
+        <item>orange</item>
+        <item>purple</item>
+        <item>pink</item>
+        <item>brown</item>
+        <item>black</item>
+        <item>white</item>
+        <item>gray</item>
+        <item>gold</item>
+        <item>silver</item>
+        <item>indigo</item>
+        <item>violet</item>
+        <item>cyan</item>
+        <item>magenta</item>
+        <item>teal</item>
+        <item>maroon</item>
+        <item>lavender</item>
+        <item>turquoise</item>
+        <item>chartreuse</item>
+        <item>crimson</item>
+        <item>emerald</item>
+        <item>amethyst</item>
+        <item>ruby</item>
+        <item>sapphire</item>
+        <item>topaz</item>
+        <item>coral</item>
+        <item>taupe</item>
+        <item>beige</item>
+        <item>cerulean</item>
+        <item>sienna</item>
+        <item>periwinkle</item>
+        <item>ochre</item>
+        <item>vermillion</item>
+        <item>auburn</item>
+        <item>olive</item>
+        <item>peach</item>
+        <item>sepia</item>
+        <item>turmeric</item>
+        <item>rose</item>
+    </string-array>
+
+    <string-array name="random">
+        <!-- random -->
         <item>programming</item>
         <item>android</item>
         <item>hangman</item>
         <item>java</item>
-
+        <item>umbrella</item>
+        <item>elephant</item>
+        <item>mountain</item>
+        <item>ocean</item>
+        <item>guitar</item>
+        <item>puzzle</item>
+        <item>whale</item>
+        <item>telescope</item>
+        <item>volcano</item>
+        <item>chocolate</item>
+        <item>dragonfly</item>
+        <item>sunflower</item>
+        <item>waterfall</item>
+        <item>zeppelin</item>
+        <item>kangaroo</item>
+        <item>skyscraper</item>
+        <item>carousel</item>
+        <item>orchestra</item>
+        <item>jazz</item>
+        <item>jigsaw</item>
+        <item>labyrinth</item>
+        <item>marvelous</item>
+        <item>paradise</item>
+        <item>cacophony</item>
+        <item>effulgent</item>
+        <item>umbrella</item>
+        <item>trampoline</item>
+        <item>juggling</item>
+        <item>quinoa</item>
+        <item>sphinx</item>
+        <item>blueberry</item>
+        <item>flamenco</item>
+        <item>hypnotic</item>
+        <item>elixir</item>
+        <item>whisper</item>
+        <item>enigma</item>
+        <item>phoenix</item>
+        <item>blizzard</item>
+        <item>avalanche</item>
+        <item>majestic</item>
+        <item>tranquil</item>
+        <item>harmony</item>
+        <item>ethereal</item>
+        <item>resilient</item>
+        <item>clandestine</item>
+        <item>radiant</item>
+        <item>magnificent</item>
+        <item>cacophony</item>
+        <item>blissful</item>
+        <item>phenomenal</item>
+        <item>efflorescent</item>
+        <item>whispering</item>
+        <item>ambrosial</item>
+        <item>luminescent</item>
+        <item>eloquent</item>
+        <item>graceful</item>
     </string-array>
+
 </resources>

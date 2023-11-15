@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="HANGMAN GAME"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/guessFruitButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/titleTextView"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:text="GUESS THE FRUIT"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        style="@style/CategoryButton"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/guessAnimalButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/guessFruitButton"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:text="GUESS THE ANIMAL"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        style="@style/CategoryButton"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/guessColorsButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/guessAnimalButton"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="GUESS THE COLOR"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        style="@style/CategoryButton"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/guessRandomButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/guessColorsButton"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:text="GUESS RANDOM"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        style="@style/CategoryButton"/>
+
+</RelativeLayout>

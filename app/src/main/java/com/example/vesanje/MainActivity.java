@@ -1,5 +1,6 @@
 package com.example.vesanje;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String[] wordArray;
     private String secretWord;
     private StringBuilder displayWord;
     private int remainingGuesses = 6;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView EndTextView;
     private TextView EndWordTextView;
     private TextView guessesTextView;
+    private TextView categoryTextView;
     private GridLayout keyboardGrid;
 
     @Override
@@ -31,12 +34,17 @@ public class MainActivity extends AppCompatActivity {
         EndTextView = findViewById(R.id.EndTextView);
         EndWordTextView = findViewById(R.id.EndWordTextView);
         guessesTextView = findViewById(R.id.guessesTextView);
+        categoryTextView = findViewById(R.id.categoryTextView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
 
-        String[] hangmanWords = getResources().getStringArray(R.array.hangman_words);
-        secretWord = getRandomWord(hangmanWords);
-
-        displayWord = new StringBuilder("_".repeat(secretWord.length()));
+        Intent intent = getIntent();
+        if (intent.hasExtra("category")) {
+            String category = intent.getStringExtra("category");
+            categoryTextView.setText("(" + category + ")");
+            loadWordList(category);
+        } else {
+            loadWordList("random");
+        }
 
         updateWordDisplay();
         displayGuesses();
@@ -44,10 +52,13 @@ public class MainActivity extends AppCompatActivity {
         setupKeyboard();
     }
 
-    private String getRandomWord(String[] words) {
-        Random random = new Random();
-        int index = random.nextInt(words.length);
-        return words[index];
+    private void loadWordList(String category) {
+        int wordListResourceId = getResources().getIdentifier(category, "array", getPackageName());
+        wordArray = getResources().getStringArray(wordListResourceId);
+
+        int randomIndex = (int) (Math.random() * wordArray.length);
+        secretWord = wordArray[randomIndex].toUpperCase();
+        displayWord = new StringBuilder("_".repeat(secretWord.length()));
     }
 
     private void setupKeyboard() {
@@ -124,22 +135,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetGame() {
-        String[] hangmanWords = getResources().getStringArray(R.array.hangman_words);
-        secretWord = getRandomWord(hangmanWords);
-
-        displayWord = new StringBuilder("_".repeat(secretWord.length()));
         remainingGuesses = 6;
-        
+
+        if (wordArray != null && wordArray.length > 0) {
+            int randomIndex = (int) (Math.random() * wordArray.length);
+            secretWord = wordArray[randomIndex].toUpperCase();
+            displayWord = new StringBuilder("_".repeat(secretWord.length()));
+        } else {
+            secretWord = "DEFAULT";
+            displayWord = new StringBuilder("_".repeat(secretWord.length()));
+        }
+
         EndTextView.setText("");
         EndWordTextView.setText("");
 
         updateWordDisplay();
         displayGuesses();
+        enableKeyboard();
 
         Button tryAgainButton = findViewById(R.id.playAgainButton);
         tryAgainButton.setVisibility(View.GONE);
-
-        enableKeyboard();
     }
 
     private void enableKeyboard() {
@@ -158,5 +173,10 @@ public class MainActivity extends AppCompatActivity {
                 child.setEnabled(false);
             }
         }
+    }
+    public void changeCategory(View view) {
+        Intent intent = new Intent(this, IntroActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

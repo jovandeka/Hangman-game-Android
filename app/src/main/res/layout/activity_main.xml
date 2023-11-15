@@ -7,30 +7,50 @@
     tools:context=".MainActivity"
     android:background="@color/black">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/changeCategoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:textStyle="bold"
+        android:onClick="changeCategory"
+        style="@style/ChangeCategoryButton" />
+
     <TextView
         android:id="@+id/wordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="200dp"
         android:textSize="50sp"
         android:text="_ _ _ _ _"/>
+
+    <TextView
+        android:id="@+id/categoryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wordTextView"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/guessesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/wordTextView"
         android:textColor="@color/white"
+        android:layout_below="@id/categoryTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="16sp"
         android:text="Guesses left: 6"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/playAgainButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/keyboardGrid"
         android:text="Play Again"
@@ -38,7 +58,8 @@
         android:visibility="gone"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        tools:ignore="NotSibling" />
+        tools:ignore="NotSibling"
+        style="@style/CategoryButton"/>
 
     <TextView
         android:id="@+id/EndTextView"

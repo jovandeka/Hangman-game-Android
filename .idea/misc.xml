@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Bogdanovic/AndroidStudioProjects/Vesanje/app/src/main/res/drawable/button_background.xml" value="0.136" />
+        <entry key="..\:/Users/Bogdanovic/AndroidStudioProjects/Vesanje/app/src/main/res/drawable/gradient_button_bg.xml" value="0.136" />
+        <entry key="..\:/Users/Bogdanovic/AndroidStudioProjects/Vesanje/app/src/main/res/drawable/ic_launcher_background.xml" value="0.137" />
         <entry key="..\:/Users/Bogdanovic/AndroidStudioProjects/Vesanje/app/src/main/res/drawable/keyboard_button_bg.xml" value="0.137" />
+        <entry key="..\:/Users/Bogdanovic/AndroidStudioProjects/Vesanje/app/src/main/res/layout/activity_intro.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Bogdanovic/AndroidStudioProjects/Vesanje/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>
