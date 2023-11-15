@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Vesanje</string>
+    <string name="app_name">Mr. Hangman</string>
 
     <string-array name="fruit">
         <!-- fruits -->
