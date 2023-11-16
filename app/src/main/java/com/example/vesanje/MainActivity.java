@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         }else if(intent.hasExtra("word")) {
             String word = intent.getStringExtra("word");
             String categoryPvp = intent.getStringExtra("categoryPvp");
-            categoryTextView.setText("(" + categoryPvp + ")");
+            String category = categoryPvp.replaceAll("\\s+", " ");
+            categoryTextView.setText("(" + category + ")");
             loadWord(word);
         }else
          {
