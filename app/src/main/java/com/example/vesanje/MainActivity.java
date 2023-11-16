@@ -76,7 +76,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadWord(String word) {
         secretWord = word;
-        displayWord = new StringBuilder("_".repeat(secretWord.length()));
+        displayWord = new StringBuilder();
+        for(int i = 0; i<word.length();i++){
+            if(word.charAt(i)!=' '){
+                displayWord.append('_');
+            }else{
+                displayWord.append(' ');
+            }
+        }
+
     }
 
     private void loadWordList(String category) {
