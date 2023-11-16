@@ -37,7 +37,7 @@
         android:paddingRight="15dp"
         android:textColor="@color/black"
         android:layout_marginTop="15dp"
-        android:textSize="50sp"
+        android:textSize="45sp"
         android:text="_ _ _ _ _"
         style="@style/WordButton"/>
 
@@ -96,10 +96,11 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
-            android:columnCount="10"
+            android:columnCount="11"
             android:rowCount="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.448"
             app:layout_constraintStart_toStartOf="parent">
 
             <!-- First Row -->
@@ -153,6 +154,11 @@
                 style="@style/KeyboardTextView"
                 android:text="P" />
 
+            <TextView
+                android:id="@+id/tvŠ"
+                style="@style/KeyboardTextView"
+                android:text="Š" />
+
             <!-- Second Row -->
             <TextView
                 android:id="@+id/tvA"
@@ -199,7 +205,23 @@
                 style="@style/KeyboardTextView"
                 android:text="L" />
 
+            <TextView
+                android:id="@+id/tvČ"
+                style="@style/KeyboardTextView"
+                android:text="Č" />
+
+            <TextView
+                android:id="@+id/tvĆ"
+                style="@style/KeyboardTextView"
+                android:text="Ć" />
+
             <!-- Third Row -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1" />
+
             <TextView
                 android:id="@+id/tvZ"
                 style="@style/KeyboardTextView"
@@ -235,8 +257,16 @@
                 style="@style/KeyboardTextView"
                 android:text="M" />
 
-        </GridLayout>
+            <TextView
+                android:id="@+id/tvĐ"
+                style="@style/KeyboardTextView"
+                android:text="Đ" />
 
+            <TextView
+                android:id="@+id/tvŽ"
+                style="@style/KeyboardTextView"
+                android:text="Ž" />
+        </GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

@@ -149,12 +149,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pvpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="PvP"
         android:textAllCaps="false"
+        android:textSize="18sp"
         style="@style/PvpButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

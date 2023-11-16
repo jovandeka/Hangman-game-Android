@@ -75,12 +75,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadWord(String word) {
-        secretWord = word;
+        String input = word;
+        secretWord = input.replaceAll("\\s+", " ");
+        int len = word.length();
         displayWord = new StringBuilder();
-        for(int i = 0; i<word.length();i++){
+        for(int i = 0; i<len;i++){
             if(word.charAt(i)!=' '){
                 displayWord.append('_');
-            }else{
+            }else if(word.charAt(i)==' ' && word.charAt(i-1)!=' '){
                 displayWord.append(' ');
             }
         }
