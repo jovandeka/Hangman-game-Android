@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Mr. Hangman</string>
+    <string name="editTextCategory">Enter the category</string>
+    <string name="editTextWord">Enter the word</string>
 
     <string-array name="fruit">
         <!-- fruits -->

@@ -18,32 +18,35 @@
         app:srcCompat="@drawable/undo" />
 
     <TextView
+        android:id="@+id/categoryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"
+        android:textSize="15sp" />
+
+    <TextView
         android:id="@+id/wordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:layout_marginTop="100dp"
+        android:layout_below="@id/categoryTextView"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
         android:textSize="50sp"
-        android:text="_ _ _ _ _"/>
-
-    <TextView
-        android:id="@+id/categoryTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/wordTextView"
-        android:text=""
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:layout_marginTop="10dp"
-        android:textSize="15sp" />
+        android:text="_ _ _ _ _"
+        style="@style/WordButton"/>
 
     <TextView
         android:id="@+id/guessesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_below="@id/categoryTextView"
+        android:layout_below="@id/wordTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:textSize="16sp"

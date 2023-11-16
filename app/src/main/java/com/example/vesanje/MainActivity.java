@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -48,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
             String category = intent.getStringExtra("category");
             categoryTextView.setText("(" + category + ")");
             loadWordList(category);
-        } else {
+        }else if(intent.hasExtra("word")) {
+            String word = intent.getStringExtra("word");
+            String categoryPvp = intent.getStringExtra("categoryPvp");
+            categoryTextView.setText("(" + categoryPvp + ")");
+            loadWord(word);
+        }else
+         {
             loadWordList("random");
         }
 
@@ -65,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
+    }
+
+    private void loadWord(String word) {
+        secretWord = word;
+        displayWord = new StringBuilder("_".repeat(secretWord.length()));
     }
 
     private void loadWordList(String category) {
@@ -143,8 +155,14 @@ public class MainActivity extends AppCompatActivity {
         tryAgainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Reset the game when "Try Again" is clicked
-                resetGame();
+                Intent intent = getIntent();
+                if(intent.hasExtra("category")){
+                    resetGame();
+                }else{
+                    Intent intent2 = new Intent(MainActivity.this, TwoPlayerGameActivity.class);
+                    startActivity(intent2);
+                }
+
             }
         });
     }
@@ -188,5 +206,12 @@ public class MainActivity extends AppCompatActivity {
                 child.setEnabled(false);
             }
         }
+    }
+    public void onBackPressed() {
+
+        super.onBackPressed();
+        Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

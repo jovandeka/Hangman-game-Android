@@ -19,6 +19,7 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
+        Button pvpButton = findViewById(R.id.pvpButton);
         Button guessFruitButton = findViewById(R.id.guessFruitButton);
         Button guessAnimalButton = findViewById(R.id.guessAnimalButton);
         Button guessColorsButton = findViewById(R.id.guessColorsButton);
@@ -49,6 +50,13 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startGame("random");
+            }
+        });
+        pvpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(IntroActivity.this, TwoPlayerGameActivity.class);
+                startActivity(intent);
             }
         });
     }

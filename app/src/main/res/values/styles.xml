@@ -17,8 +17,18 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="PvpButton">
+        <item name="android:background">@drawable/pvp_button_bg</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
     <style name="CategoryButton">
         <item name="android:background">@drawable/gradient_button_bg</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="WordButton">
+        <item name="android:background">@drawable/word_bg</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 
