@@ -133,7 +133,7 @@
         <item>sienna</item>
         <item>periwinkle</item>
         <item>ochre</item>
-        <item>vermillion</item>
+        <item>vermilion</item>
         <item>auburn</item>
         <item>olive</item>
         <item>peach</item>
@@ -204,6 +204,136 @@
         <item>luminescent</item>
         <item>eloquent</item>
         <item>graceful</item>
+        <item>airplane</item>
+        <item>butterfly</item>
+        <item>caterpillar</item>
+        <item>dolphin</item>
+        <item>elephant</item>
+        <item>fireplace</item>
+        <item>giraffe</item>
+        <item>hamburger</item>
+        <item>icecream</item>
+        <item>jellyfish</item>
+        <item>kangaroo</item>
+        <item>lighthouse</item>
+        <item>mountain</item>
+        <item>notebook</item>
+        <item>pineapple</item>
+        <item>question</item>
+        <item>rainbow</item>
+        <item>strawberry</item>
+        <item>telephone</item>
+        <item>umbrella</item>
+        <item>violin</item>
+        <item>waterfall</item>
+        <item>xylophone</item>
+        <item>yogurt</item>
+        <item>zeppelin</item>
+        <item>apple</item>
+        <item>banana</item>
+        <item>cherry</item>
+        <item>dog</item>
+        <item>elephant</item>
+        <item>frog</item>
+        <item>grape</item>
+        <item>house</item>
+        <item>igloo</item>
+        <item>jacket</item>
+        <item>kite</item>
+        <item>lemon</item>
+        <item>monkey</item>
+        <item>nest</item>
+        <item>orange</item>
+        <item>pencil</item>
+        <item>quilt</item>
+        <item>rabbit</item>
+        <item>sun</item>
+        <item>train</item>
+        <item>umbrella</item>
+        <item>volcano</item>
+        <item>watermelon</item>
+        <item>xylophone</item>
+        <item>yoyo</item>
+        <item>zebra</item>
+        <item>astronaut</item>
+        <item>blueberry</item>
+        <item>chocolate</item>
+        <item>dragonfly</item>
+        <item>elephant</item>
+        <item>frisbee</item>
+        <item>giraffe</item>
+        <item>hurricane</item>
+        <item>invention</item>
+        <item>jigsaw</item>
+        <item>koala</item>
+        <item>lighthouse</item>
+        <item>marathon</item>
+        <item>narwhal</item>
+        <item>orchestra</item>
+        <item>parrot</item>
+        <item>quicksand</item>
+        <item>raccoon</item>
+        <item>strawberry</item>
+        <item>tangerine</item>
+        <item>unicycle</item>
+        <item>vegetable</item>
+        <item>whistle</item>
+        <item>xerox</item>
+        <item>yellowstone</item>
+        <item>zipper</item>
+        <item>algorithm</item>
+        <item>backpack</item>
+        <item>cactus</item>
+        <item>dolphin</item>
+        <item>elephant</item>
+        <item>flamingo</item>
+        <item>guitar</item>
+        <item>hurricane</item>
+        <item>island</item>
+        <item>jazz</item>
+        <item>kangaroo</item>
+        <item>lighthouse</item>
+        <item>marathon</item>
+        <item>notebook</item>
+        <item>ostrich</item>
+        <item>paradise</item>
+        <item>quasar</item>
+        <item>rhythm</item>
+        <item>serendipity</item>
+        <item>telescope</item>
+        <item>umbrella</item>
+        <item>venture</item>
+        <item>wanderlust</item>
+        <item>xenon</item>
+        <item>yellowstone</item>
+        <item>zenith</item>
+        <item>ambrosia</item>
+        <item>blissful</item>
+        <item>cosmic</item>
+        <item>delightful</item>
+        <item>effervescent</item>
+        <item>fantasia</item>
+        <item>gleaming</item>
+        <item>harmonious</item>
+        <item>innovate</item>
+        <item>jubilant</item>
+        <item>kaleidoscope</item>
+        <item>luminous</item>
+        <item>majestic</item>
+        <item>nectar</item>
+        <item>opulent</item>
+        <item>paragon</item>
+        <item>quintessence</item>
+        <item>radiant</item>
+        <item>splendid</item>
+        <item>tranquil</item>
+        <item>utopia</item>
+        <item>vibrant</item>
+        <item>whimsical</item>
+        <item>xanadu</item>
+        <item>yonder</item>
+        <item>zephyr</item>
+
     </string-array>
 
 </resources>

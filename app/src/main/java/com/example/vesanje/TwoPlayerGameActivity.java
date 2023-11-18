@@ -27,10 +27,10 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         buttonStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!editTextWord.getText().toString().trim().isEmpty()) {
+                if (!editTextWord.getText().toString().trim().isEmpty() && isValidWord(editTextWord.getText().toString().trim())) {
                     startGame();
                 } else {
-                    editTextWord.setError("Please enter the word.");
+                    editTextWord.setError("Please enter the word. \n(without special characters)");
                 }
             }
         });
@@ -53,5 +53,9 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         intent.putExtra("word", word);
         intent.putExtra("categoryPvp", categoryPvp);
         startActivity(intent);
+    }
+    private static boolean isValidWord(String word) {
+
+        return word.matches("^[a-zA-ZćčđžšĆČĐŽŠ]+$");
     }
 }
