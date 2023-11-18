@@ -56,6 +56,6 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
     }
     private static boolean isValidWord(String word) {
 
-        return word.matches("^[a-zA-ZćčđžšĆČĐŽŠ]+$");
+        return word.matches("^[a-zA-ZćčđžšĆČĐŽŠ\\s]+$");
     }
 }

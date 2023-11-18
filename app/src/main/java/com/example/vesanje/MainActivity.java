@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (incorrectGuesses) {
             case 6:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||               \n");
                 hangmanBuilder.append(" ||               \n");
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                 hangmanBuilder.append(" ||_____________  \n");
                 break;
             case 5:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||          O    \n");
                 hangmanBuilder.append(" ||               \n");
@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 hangmanBuilder.append(" ||_____________  \n");
                 break;
             case 4:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||          O    \n");
                 hangmanBuilder.append(" ||           |   \n");
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                 hangmanBuilder.append(" ||_____________  \n");
                 break;
             case 3:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||          O    \n");
                 hangmanBuilder.append(" ||         /|    \n");
@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
                 hangmanBuilder.append(" ||_____________  \n");
                 break;
             case 2:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||          O    \n");
                 hangmanBuilder.append(" ||         /|\\  \n");
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
                 hangmanBuilder.append(" ||_____________  \n");
                 break;
             case 1:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||          O    \n");
                 hangmanBuilder.append(" ||         /|\\  \n");
@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
                 hangmanBuilder.append(" ||_____________  \n");
                 break;
             case 0:
-                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" +------+         \n");
                 hangmanBuilder.append(" ||           |   \n");
                 hangmanBuilder.append(" ||          O    \n");
                 hangmanBuilder.append(" ||         /|\\  \n");
