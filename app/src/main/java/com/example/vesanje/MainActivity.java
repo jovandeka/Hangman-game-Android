@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         updateWordDisplay();
-        displayGuesses();
+        displayHangman(remainingGuesses);
 
         setupKeyboard();
 
@@ -131,17 +131,13 @@ public class MainActivity extends AppCompatActivity {
             remainingGuesses--;
         }
 
-        displayGuesses();
+        displayHangman(remainingGuesses);
         updateWordDisplay();
         checkGameStatus();
     }
 
     private void updateWordDisplay() {
         wordTextView.setText(displayWord.toString());
-    }
-
-    private void displayGuesses() {
-        guessesTextView.setText("Guesses left: " + remainingGuesses);
     }
 
     private void checkGameStatus() {
@@ -194,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
         EndWordTextView.setText("");
 
         updateWordDisplay();
-        displayGuesses();
+        displayHangman(remainingGuesses);
         enableKeyboard();
 
         Button tryAgainButton = findViewById(R.id.playAgainButton);
@@ -224,5 +220,69 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, IntroActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+    private void displayHangman(int incorrectGuesses) {
+        StringBuilder hangmanBuilder = new StringBuilder();
+
+        switch (incorrectGuesses) {
+            case 6:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+            case 5:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||          O    \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+            case 4:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||          O    \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+            case 3:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||          O    \n");
+                hangmanBuilder.append(" ||         /|    \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+            case 2:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||          O    \n");
+                hangmanBuilder.append(" ||         /|\\  \n");
+                hangmanBuilder.append(" ||               \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+            case 1:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||          O    \n");
+                hangmanBuilder.append(" ||         /|\\  \n");
+                hangmanBuilder.append(" ||         /     \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+            case 0:
+                hangmanBuilder.append(" +---------+      \n");
+                hangmanBuilder.append(" ||           |   \n");
+                hangmanBuilder.append(" ||          O    \n");
+                hangmanBuilder.append(" ||         /|\\  \n");
+                hangmanBuilder.append(" ||         / \\  \n");
+                hangmanBuilder.append(" ||_____________  \n");
+                break;
+        }
+
+        guessesTextView.setText(hangmanBuilder.toString());
     }
 }

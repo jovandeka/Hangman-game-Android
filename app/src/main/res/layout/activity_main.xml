@@ -50,7 +50,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:textSize="16sp"
-        android:text="Guesses left: 6"/>
+        android:text="hangman img"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/playAgainButton"
