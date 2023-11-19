@@ -61,6 +61,7 @@
         android:layout_marginTop="30dp"
         style="@style/CategoryButton"
         android:text="Start the Game"
+        android:fontFamily="@font/audiowide"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

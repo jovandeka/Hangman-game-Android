@@ -8,29 +8,6 @@
     android:background="@color/pale_black"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/titleTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_custom_round" />
-
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="Mr. HANGMAN"
-        android:textColor="@color/orange"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -58,6 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:text="GUESS THE FRUIT"
+            android:fontFamily="@font/audiowide"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -82,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/guessFruitButton"
+            android:fontFamily="@font/audiowide"
             android:layout_marginTop="10dp"
             android:text="GUESS THE ANIMAL"
             android:textColor="@color/black"
@@ -108,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/guessAnimalButton"
+            android:fontFamily="@font/audiowide"
             android:layout_marginTop="10dp"
             android:text="GUESS THE COLOR"
             android:textColor="@color/black"
@@ -134,6 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/guessColorsButton"
+            android:fontFamily="@font/audiowide"
             android:layout_marginTop="10dp"
             android:text="GUESS RANDOM"
             android:textColor="@color/black"
@@ -145,21 +126,26 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/pvpButton"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="PvP"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        style="@style/PvpButton"
+    <ImageView
+        android:id="@+id/pvp_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/vs_button" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/title_hangman" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
