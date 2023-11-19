@@ -56,16 +56,16 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonStartGame"
+        style="@style/CategoryButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        style="@style/CategoryButton"
-        android:text="Start the Game"
         android:fontFamily="@font/audiowide"
+        android:text="Start the Game"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/randBtn"
+        app:layout_constraintStart_toStartOf="@+id/editTextCategory"
         app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
 
     <ImageView
@@ -77,4 +77,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/capital" />
+
+    <ImageView
+        android:id="@+id/randBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonStartGame"
+        app:layout_constraintEnd_toEndOf="@+id/editTextCategory"
+        app:layout_constraintTop_toTopOf="@+id/buttonStartGame"
+        app:srcCompat="@drawable/random_dice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

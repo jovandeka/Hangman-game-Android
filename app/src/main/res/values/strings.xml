@@ -142,6 +142,87 @@
         <item>rose</item>
     </string-array>
 
+    <string-array name="instrument">
+        <item>guitar</item>
+        <item>piano</item>
+        <item>violin</item>
+        <item>trumpet</item>
+        <item>drums</item>
+        <item>saxophone</item>
+        <item>flute</item>
+        <item>clarinet</item>
+        <item>trombone</item>
+        <item>ukulele</item>
+        <item>cello</item>
+        <item>bassoon</item>
+        <item>harmonica</item>
+        <item>accordion</item>
+        <item>xylophone</item>
+        <item>bagpipes</item>
+        <item>harp</item>
+        <item>oboe</item>
+        <item>banjo</item>
+        <item>mandolin</item>
+        <item>organ</item>
+        <item>didgeridoo</item>
+        <item>steel drum</item>
+        <item>bongos</item>
+        <item>french horn</item>
+        <item>pan flute</item>
+        <item>sitar</item>
+        <item>keyboard</item>
+        <item>marimba</item>
+        <item>accordion</item>
+        <item>synthesizer</item>
+        <item>conga</item>
+    </string-array>
+
+    <string-array name="sport">
+        <item>football</item>
+        <item>soccer</item>
+        <item>basketball</item>
+        <item>tennis</item>
+        <item>baseball</item>
+        <item>volleyball</item>
+        <item>cricket</item>
+        <item>golf</item>
+        <item>rugby</item>
+        <item>hockey</item>
+        <item>swimming</item>
+        <item>track and field</item>
+        <item>boxing</item>
+        <item>table tennis</item>
+        <item>badminton</item>
+        <item>skiing</item>
+        <item>snowboarding</item>
+        <item>surfing</item>
+        <item>cycling</item>
+        <item>karate</item>
+        <item>wrestling</item>
+        <item>gymnastics</item>
+        <item>ice skating</item>
+        <item>rowing</item>
+        <item>sailing</item>
+        <item>softball</item>
+        <item>archery</item>
+        <item>climbing</item>
+        <item>fencing</item>
+        <item>handball</item>
+        <item>lacrosse</item>
+        <item>ultimate frisbee</item>
+        <item>water polo</item>
+        <item>canoeing</item>
+        <item>equestrian</item>
+        <item>triathlon</item>
+        <item>marathon</item>
+        <item>figure skating</item>
+        <item>bobsleigh</item>
+        <item>snooker</item>
+        <item>bowling</item>
+        <item>motorsports</item>
+        <item>climbing</item>
+    </string-array>
+
     <string-array name="random">
         <!-- random -->
         <item>programming</item>
