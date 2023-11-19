@@ -92,9 +92,16 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         String[] colorArray = getResources().getStringArray(R.array.color);
         String[] instrumentArray = getResources().getStringArray(R.array.instrument);
         String[] sportArray = getResources().getStringArray(R.array.sport);
+        String[] footballArray = getResources().getStringArray(R.array.club);
+        String[] countryArray = getResources().getStringArray(R.array.country);
+        String[] foodArray = getResources().getStringArray(R.array.food);
+        String[] vegetableArray = getResources().getStringArray(R.array.vegetable);
+        String[] movieArray = getResources().getStringArray(R.array.movie);
+        String[] brandArray = getResources().getStringArray(R.array.brand);
+        String[] bandArray = getResources().getStringArray(R.array.band);
 
         Random random = new Random();
-        int randomIndex = random.nextInt(5);
+        int randomIndex = random.nextInt(12);
         switch (randomIndex) {
             case 0:
                 return new ArrayInfo(fruitArray, "fruit");
@@ -106,8 +113,22 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
                 return new ArrayInfo(instrumentArray, "instrument");
             case 4:
                 return new ArrayInfo(sportArray, "sport");
+            case 5:
+                return new ArrayInfo(footballArray, "club");
+            case 6:
+                return new ArrayInfo(countryArray, "country");
+            case 7:
+                return new ArrayInfo(foodArray, "food");
+            case 8:
+                return new ArrayInfo(vegetableArray, "vegetable");
+            case 9:
+                return new ArrayInfo(movieArray, "movie");
+            case 10:
+                return new ArrayInfo(brandArray, "brand");
+            case 11:
+                return new ArrayInfo(bandArray, "band");
             default:
-                return new ArrayInfo(fruitArray, "fruit");
+                return new ArrayInfo(countryArray, "country");
         }
     }
 

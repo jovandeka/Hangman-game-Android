@@ -223,6 +223,443 @@
         <item>climbing</item>
     </string-array>
 
+    <string-array name="club">
+        <!-- england -->
+        <item>Arsenal</item>
+        <item>Aston Villa</item>
+        <item>Brentford</item>
+        <item>Brighton Hove Albion</item>
+        <item>Burnley</item>
+        <item>Chelsea</item>
+        <item>Crystal Palace</item>
+        <item>Everton</item>
+        <item>Leeds United</item>
+        <item>Leicester City</item>
+        <item>Liverpool</item>
+        <item>Manchester City</item>
+        <item>Manchester United</item>
+        <item>Newcastle United</item>
+        <item>Norwich City</item>
+        <item>Southampton</item>
+        <item>Tottenham Hotspur</item>
+        <item>Watford</item>
+        <item>West Ham United</item>
+        <item>Wolverhampton Wanderers</item>
+        <!-- serbia -->
+        <item>Partizan</item>
+        <item>crvena zvezda</item>
+        <item>Voždovac</item>
+        <item>Čukarički</item>
+        <item>Radnički Niš</item>
+        <item>TSC Bačka Topola</item>
+        <item>Mladost Lučani</item>
+        <item>Napredak</item>
+        <item>Javor Ivanjica</item>
+        <item>Proleter Novi Sad</item>
+        <item>Radnik Surdulica</item>
+        <item>Novi Pazar</item>
+        <item>Inđija</item>
+        <item>Rad Beograd</item>
+        <item>Bačka</item>
+        <item>Metalac</item>
+    </string-array>
+
+    <string-array name="country">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Antigua and Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Bahamas</item>
+        <item>Bahrain</item>
+        <item>Bangladesh</item>
+        <item>Barbados</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bhutan</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Botswana</item>
+        <item>Brazil</item>
+        <item>Brunei</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burundi</item>
+        <item>Cabo Verde</item>
+        <item>Cambodia</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Colombia</item>
+        <item>Comoros</item>
+        <item>Congo</item>
+        <item>Costa Rica</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
+        <item>Denmark</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+        <item>Equatorial Guinea</item>
+        <item>Eritrea</item>
+        <item>Estonia</item>
+        <item>Eswatini</item>
+        <item>Ethiopia</item>
+        <item>Fiji</item>
+        <item>Finland</item>
+        <item>France</item>
+        <item>Gabon</item>
+        <item>Gambia</item>
+        <item>Georgia</item>
+        <item>Germany</item>
+        <item>Ghana</item>
+        <item>Greece</item>
+        <item>Grenada</item>
+        <item>Guatemala</item>
+        <item>Guinea</item>
+        <item>Guyana</item>
+        <item>Haiti</item>
+        <item>Honduras</item>
+        <item>Hungary</item>
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Iran</item>
+        <item>Iraq</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Jamaica</item>
+        <item>Japan</item>
+        <item>Jordan</item>
+        <item>Kazakhstan</item>
+        <item>Kenya</item>
+        <item>Kiribati</item>
+        <item>North Korea</item>
+        <item>South Korea</item>
+        <item>Kuwait</item>
+        <item>Kyrgyzstan</item>
+        <item>Laos</item>
+        <item>Latvia</item>
+        <item>Lebanon</item>
+        <item>Lesotho</item>
+        <item>Liberia</item>
+        <item>Libya</item>
+        <item>Liechtenstein</item>
+        <item>Lithuania</item>
+        <item>Luxembourg</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Malaysia</item>
+        <item>Maldives</item>
+        <item>Mali</item>
+        <item>Malta</item>
+        <item>Marshall Islands</item>
+        <item>Mauritania</item>
+        <item>Mauritius</item>
+        <item>Mexico</item>
+        <item>Micronesia</item>
+        <item>Moldova</item>
+        <item>Monaco</item>
+        <item>Mongolia</item>
+        <item>Montenegro</item>
+        <item>Morocco</item>
+        <item>Mozambique</item>
+        <item>Myanmar</item>
+        <item>Namibia</item>
+        <item>Nauru</item>
+        <item>Nepal</item>
+        <item>Netherlands</item>
+        <item>New Zealand</item>
+        <item>Nicaragua</item>
+        <item>Niger</item>
+        <item>Nigeria</item>
+        <item>North Macedonia</item>
+        <item>Norway</item>
+        <item>Oman</item>
+        <item>Pakistan</item>
+        <item>Palau</item>
+        <item>Palestine State</item>
+        <item>Panama</item>
+        <item>Papua New Guinea</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>Philippines</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Qatar</item>
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Rwanda</item>
+        <item>Saint Kitts and Nevis</item>
+        <item>Saint Lucia</item>
+        <item>Saint Vincent and the Grenadines</item>
+        <item>Samoa</item>
+        <item>San Marino</item>
+        <item>Sao Tome and Principe</item>
+        <item>Saudi Arabia</item>
+        <item>Senegal</item>
+        <item>Serbia</item>
+        <item>Seychelles</item>
+        <item>Sierra Leone</item>
+        <item>Singapore</item>
+        <item>Slovakia</item>
+        <item>Slovenia</item>
+        <item>Solomon Islands</item>
+        <item>Somalia</item>
+        <item>South Africa</item>
+        <item>South Sudan</item>
+        <item>Spain</item>
+        <item>Sri Lanka</item>
+        <item>Sudan</item>
+        <item>Suriname</item>
+        <item>Sweden</item>
+        <item>Switzerland</item>
+        <item>Syria</item>
+        <item>Tajikistan</item>
+        <item>Tanzania</item>
+        <item>Thailand</item>
+        <item>Togo</item>
+        <item>Tonga</item>
+        <item>Trinidad and Tobago</item>
+        <item>Tunisia</item>
+        <item>Turkey</item>
+        <item>Turkmenistan</item>
+        <item>Tuvalu</item>
+        <item>Uganda</item>
+        <item>Ukraine</item>
+        <item>United Arab Emirates</item>
+        <item>United Kingdom</item>
+        <item>United States of America</item>
+        <item>Uruguay</item>
+        <item>Uzbekistan</item>
+        <item>Vanuatu</item>
+        <item>Vatican City</item>
+        <item>Venezuela</item>
+        <item>Vietnam</item>
+        <item>Yemen</item>
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+    </string-array>
+
+    <string-array name="food">
+        <item>Pizza</item>
+        <item>Pasta</item>
+        <item>Sushi</item>
+        <item>Burger</item>
+        <item>Ice Cream</item>
+        <item>Chocolate</item>
+        <item>Pancake</item>
+        <item>Sandwich</item>
+        <item>Tacos</item>
+        <item>Steak</item>
+        <item>Chicken Wings</item>
+        <item>Hot Dog</item>
+        <item>Soup</item>
+        <item>Cake</item>
+        <item>Coffee</item>
+        <item>Tea</item>
+        <item>Smoothie</item>
+        <item>Doughnut</item>
+        <item>Popcorn</item>
+        <item>French Fries</item>
+        <item>Spaghetti</item>
+        <item>Burrito</item>
+        <item>Waffle</item>
+        <item>Nachos</item>
+        <item>Cookie</item>
+        <item>Muffin</item>
+        <item>Brownie</item>
+        <item>Pretzel</item>
+    </string-array>
+
+    <string-array name="vegetable">
+        <item>Carrot</item>
+        <item>Broccoli</item>
+        <item>Spinach</item>
+        <item>Tomato</item>
+        <item>Cucumber</item>
+        <item>Onion</item>
+        <item>Garlic</item>
+        <item>Pepper</item>
+        <item>Radish</item>
+        <item>Cabbage</item>
+        <item>Cauliflower</item>
+        <item>Zucchini</item>
+        <item>Eggplant</item>
+        <item>Artichoke</item>
+        <item>Mushroom</item>
+        <item>Asparagus</item>
+        <item>Beetroot</item>
+        <item>Celery</item>
+        <item>Leek</item>
+        <item>Potato</item>
+        <item>Sweet Potato</item>
+        <item>Brussels Sprouts</item>
+        <item>Peas</item>
+        <item>Green Beans</item>
+        <item>Butternut Squash</item>
+        <item>Radish</item>
+        <item>Turnip</item>
+        <item>Okra</item>
+        <item>Kale</item>
+        <item>Swiss Chard</item>
+        <item>Watercress</item>
+        <item>Beet Greens</item>
+        <item>Collard Greens</item>
+        <item>Mustard Greens</item>
+        <item>Romaine Lettuce</item>
+        <item>Iceberg Lettuce</item>
+        <item>Endive</item>
+        <item>Arugula</item>
+        <item>Red Cabbage</item>
+        <item>Green Cabbage</item>
+        <item>Chinese Cabbage</item>
+        <item>Iceberg Lettuce</item>
+        <item>Spring Onion</item>
+        <item>Shallot</item>
+        <item>Fennel</item>
+    </string-array>
+
+    <string-array name="movie">
+        <item>The Shawshank Redemption</item>
+        <item>The Godfather</item>
+        <item>The Dark Knight</item>
+        <item>Pulp Fiction</item>
+        <item>Schindlers List</item>
+        <item>The Lord of the Rings</item>
+        <item>Forrest Gump</item>
+        <item>The Matrix</item>
+        <item>Citizen Kane</item>
+        <item>Casablanca</item>
+        <item>Star Wars</item>
+        <item>Goodfellas</item>
+        <item>The Silence of the Lambs</item>
+        <item>Saving Private Ryan</item>
+        <item>The Pianist</item>
+        <item>The Departed</item>
+        <item>Gladiator</item>
+        <item>The Green Mile</item>
+    </string-array>
+
+    <string-array name="brand">
+        <item>Apple</item>
+        <item>Google</item>
+        <item>Microsoft</item>
+        <item>Amazon</item>
+        <item>Facebook</item>
+        <item>Samsung</item>
+        <item>IBM</item>
+        <item>Coca Cola</item>
+        <item>Nike</item>
+        <item>McDonalds</item>
+        <item>Toyota</item>
+        <item>Disney</item>
+        <item>Mercedes Benz</item>
+        <item>BMW</item>
+        <item>Intel</item>
+        <item>Adobe</item>
+        <item>Sony</item>
+        <item>HP</item>
+        <item>Dell</item>
+        <item>General Electric</item>
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>PayPal</item>
+        <item>Netflix</item>
+        <item>Tesla</item>
+        <item>Pepsi</item>
+        <item>Colgate</item>
+        <item>Adidas</item>
+        <item>Lego</item>
+        <item>Canon</item>
+        <item>Louis Vuitton</item>
+        <item>Chanel</item>
+        <item>Gucci</item>
+        <item>Zara</item>
+        <item>Prada</item>
+        <item>Rolex</item>
+        <item>Nintendo</item>
+        <item>PlayStation</item>
+        <item>Xbox</item>
+        <item>Starbucks</item>
+        <item>Nike</item>
+        <item>Uber</item>
+        <item>Airbnb</item>
+        <item>Spotify</item>
+        <item>WhatsApp</item>
+        <item>Twitter</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+        <item>YouTube</item>
+        <item>Snapchat</item>
+        <item>Walmart</item>
+        <item>Target</item>
+    </string-array>
+
+    <string-array name="band">
+        <item>The Beatles</item>
+        <item>Queen</item>
+        <item>Rolling Stones</item>
+        <item>Pink Floyd</item>
+        <item>Nirvana</item>
+        <item>Led Zeppelin</item>
+        <item>The Who</item>
+        <item>AC DC</item>
+        <item>Metallica</item>
+        <item>Red Hot Chili Peppers</item>
+        <item>Coldplay</item>
+        <item>Green Day</item>
+        <item>Linkin Park</item>
+        <item>Oasis</item>
+        <item>Radiohead</item>
+        <item>Foo Fighters</item>
+        <item>Guns N Roses</item>
+        <item>The Eagles</item>
+        <item>Bon Jovi</item>
+        <item>Aerosmith</item>
+        <item>Fleetwood Mac</item>
+        <item>The Police</item>
+        <item>ABBA</item>
+        <item>Black Sabbath</item>
+        <item>Deep Purple</item>
+        <item>Blur</item>
+        <item>The Beach Boys</item>
+        <item>The Cure</item>
+        <item>Rush</item>
+        <item>The Doors</item>
+        <item>Genesis</item>
+        <item>The Clash</item>
+        <item>The Velvet Underground</item>
+        <item>ZZ Top</item>
+        <item>Def Leppard</item>
+        <item>Journey</item>
+        <item>The Ramones</item>
+        <item>Van Halen</item>
+        <item>The Smiths</item>
+        <item>Yes</item>
+        <item>The Supremes</item>
+        <item>Backstreet Boys</item>
+        <item>NSYNC</item>
+        <item>The Spice Girls</item>
+    </string-array>
+
     <string-array name="random">
         <!-- random -->
         <item>programming</item>
