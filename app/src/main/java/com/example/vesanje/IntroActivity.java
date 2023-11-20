@@ -1,6 +1,7 @@
 package com.example.vesanje;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,6 +28,7 @@ public class IntroActivity extends AppCompatActivity {
 
         ImageView pvpButton = findViewById(R.id.pvp_button);
         ImageView randomButton = findViewById(R.id.random_button);
+
         Button guessFruitButton = findViewById(R.id.guessFruitButton);
         Button guessAnimalButton = findViewById(R.id.guessAnimalButton);
         Button guessColorsButton = findViewById(R.id.guessColorsButton);
@@ -39,6 +41,54 @@ public class IntroActivity extends AppCompatActivity {
         Button guessMovieButton = findViewById(R.id.guessMovieButton);
         Button guessBrandButton = findViewById(R.id.guessBrandButton);
         Button guessBandButton = findViewById(R.id.guessBandButton);
+
+        TextView countFruitTV = findViewById(R.id.countFruitTV);
+        int fruitCount = countCategory("fruit");
+        countFruitTV.setText(""+fruitCount);
+
+        TextView countAnimalTV = findViewById(R.id.countAnimalTV);
+        int animalCount = countCategory("animal");
+        countAnimalTV.setText(""+animalCount);
+
+        TextView countColorTV = findViewById(R.id.countColorTV);
+        int colorCount = countCategory("color");
+        countColorTV.setText(""+colorCount);
+
+        TextView countInstrumentTV = findViewById(R.id.countInstrumentTV);
+        int instrumentCount = countCategory("instrument");
+        countInstrumentTV.setText(""+instrumentCount);
+
+        TextView countSportTV = findViewById(R.id.countSportTV);
+        int sportCount = countCategory("sport");
+        countSportTV.setText(""+sportCount);
+
+        TextView countClubTV = findViewById(R.id.countClubTV);
+        int clubCount = countCategory("club");
+        countClubTV.setText(""+clubCount);
+
+        TextView countCountryTV = findViewById(R.id.countCountryTV);
+        int countryCount = countCategory("country");
+        countCountryTV.setText(""+countryCount);
+
+        TextView countFoodTV = findViewById(R.id.countFoodTV);
+        int foodCount = countCategory("food");
+        countFoodTV.setText(""+foodCount);
+
+        TextView countVegetableTV = findViewById(R.id.countVegetableTV);
+        int vegetableCount = countCategory("vegetable");
+        countVegetableTV.setText(""+vegetableCount);
+
+        TextView countMovieTV = findViewById(R.id.countMovieTV);
+        int movieCount = countCategory("movie");
+        countMovieTV.setText(""+movieCount);
+
+        TextView countBrandTV = findViewById(R.id.countBrandTV);
+        int brandCount = countCategory("brand");
+        countBrandTV.setText(""+brandCount);
+
+        TextView countBandTV = findViewById(R.id.countBandTV);
+        int bandCount = countCategory("band");
+        countBandTV.setText(""+bandCount);
 
         guessFruitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +208,18 @@ public class IntroActivity extends AppCompatActivity {
         Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000); // Change the delay as needed
+    }
+
+    private int countCategory(String categoryName){
+        Resources res = getResources();
+        int arrayId = res.getIdentifier(categoryName, "array", getPackageName());
+
+        if (arrayId != 0) {
+            int arrayLength = res.getStringArray(arrayId).length;
+            return arrayLength;
+        } else {
+            return 0;
+        }
     }
 
 }
