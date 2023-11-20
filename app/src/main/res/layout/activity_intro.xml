@@ -23,6 +23,7 @@
         android:id="@+id/categoryScrollView"
         android:layout_width="match_parent"
         android:layout_height="465dp"
+        android:smoothScrollbar="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,8 +43,8 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessFruitButton"
@@ -69,19 +70,19 @@
                 android:id="@+id/countFruitTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessFruitButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessFruitButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessAnimalButton"
@@ -108,19 +109,19 @@
                 android:id="@+id/countAnimalTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessAnimalButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessAnimalButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessColorsButton"
@@ -147,19 +148,19 @@
                 android:id="@+id/countColorTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessColorsButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessColorsButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessInstrumentButton"
@@ -186,19 +187,19 @@
                 android:id="@+id/countInstrumentTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessInstrumentButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessInstrumentButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessSportButton"
@@ -225,19 +226,19 @@
                 android:id="@+id/countSportTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessSportButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessSportButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView10"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessClubButton"
@@ -264,19 +265,19 @@
                 android:id="@+id/countClubTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessClubButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessClubButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView11"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessCountryButton"
@@ -303,19 +304,19 @@
                 android:id="@+id/countCountryTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessCountryButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessCountryButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView12"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessFoodButton"
@@ -342,19 +343,19 @@
                 android:id="@+id/countFoodTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessFoodButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessFoodButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView13"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessVegetableButton"
@@ -381,19 +382,19 @@
                 android:id="@+id/countVegetableTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessVegetableButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessVegetableButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView14"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessMovieButton"
@@ -420,19 +421,19 @@
                 android:id="@+id/countMovieTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessMovieButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessMovieButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView15"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessBrandButton"
@@ -459,19 +460,19 @@
                 android:id="@+id/countBrandTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessBrandButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessBrandButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView16"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:elevation="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessBandButton"
@@ -498,14 +499,14 @@
                 android:id="@+id/countBandTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="20dp"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/guessBandButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guessBandButton" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
