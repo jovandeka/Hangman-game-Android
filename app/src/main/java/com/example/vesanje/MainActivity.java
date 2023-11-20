@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
         TextView letterTextView = new TextView(this);
         letterTextView.setText(String.valueOf(letter));
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                50,
+                70,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
         layoutParams.setMargins(0, 0, 6, 0);
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         letterTextView.setTextColor(getResources().getColor(R.color.white));
         letterTextView.setBackgroundColor(getResources().getColor(R.color.orange));
         letterTextView.setPadding(8, 8, 8, 8);
-        letterTextView.setTextSize(20);
+        letterTextView.setTextSize(30);
         letterTextView.setTypeface(null, Typeface.BOLD);
         letterTextView.setGravity(Gravity.CENTER);
         return letterTextView;
