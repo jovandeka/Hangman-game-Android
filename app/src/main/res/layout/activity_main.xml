@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/pale_black">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/playAgainButton"
+        style="@style/CategoryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/keyboardGrid"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/audiowide"
+        android:text="Play Again"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling" />
+
+    <TextView
+        android:id="@+id/EndTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playAgainButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playAgainButton"/>
+
+    <TextView
+        android:id="@+id/EndWordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EndTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EndTextView" />
 
     <ImageView
         android:id="@+id/backImageView"
@@ -21,33 +68,15 @@
         android:id="@+id/categoryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
         android:layout_marginTop="100dp"
-        android:textSize="15sp" />
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/lettersLinearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/categoryTextView"
-        android:layout_marginTop="15dp"
-        android:gravity="center">
-
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/letterTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/orange"
-            android:padding="8dp"
-            android:textSize="20sp"
-            android:textColor="@color/orange"
-            android:textStyle="bold"
-            android:layout_margin="4dp"/>
-    </LinearLayout>
     <!--
     <TextView
         android:id="@+id/wordTextView"
@@ -63,235 +92,223 @@
         android:text="_ _ _ _ _"
         style="@style/WordButton"/>
     -->
+
+    <LinearLayout
+        android:id="@+id/lettersLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categoryTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTextView">
+
+        <TextView
+            android:id="@+id/letterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@color/orange"
+            android:padding="8dp"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/guessesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/orange"
-        android:textStyle="bold"
         android:layout_below="@id/lettersLinearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:text="hangman img"
+        android:textColor="@color/orange"
         android:textSize="16sp"
-        android:text="hangman img"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/playAgainButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/keyboardGrid"
-        android:text="Play Again"
-        android:fontFamily="@font/audiowide"
-        android:textSize="30sp"
         android:textStyle="bold"
-        android:visibility="gone"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        tools:ignore="NotSibling"
-        style="@style/CategoryButton"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lettersLinearLayout" />
 
-    <TextView
-        android:id="@+id/EndTextView"
+    <GridLayout
+        android:id="@+id/keyboardGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/playAgainButton"
-        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:text=""/>
-    <TextView
-        android:id="@+id/EndWordTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/EndTextView"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:textSize="18sp"
-        android:text=""/>
+        android:layout_marginBottom="30dp"
+        android:columnCount="11"
+        android:rowCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <!-- First Row -->
+        <TextView
+            android:id="@+id/tvQ"
+            style="@style/KeyboardTextView"
+            android:text="Q" />
 
-        <GridLayout
-            android:id="@+id/keyboardGrid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp"
-            android:columnCount="11"
-            android:rowCount="3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.448"
-            app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/tvW"
+            style="@style/KeyboardTextView"
+            android:text="W" />
 
-            <!-- First Row -->
-            <TextView
-                android:id="@+id/tvQ"
-                style="@style/KeyboardTextView"
-                android:text="Q" />
+        <TextView
+            android:id="@+id/tvE"
+            style="@style/KeyboardTextView"
+            android:text="E" />
 
-            <TextView
-                android:id="@+id/tvW"
-                style="@style/KeyboardTextView"
-                android:text="W" />
+        <TextView
+            android:id="@+id/tvR"
+            style="@style/KeyboardTextView"
+            android:text="R" />
 
-            <TextView
-                android:id="@+id/tvE"
-                style="@style/KeyboardTextView"
-                android:text="E" />
+        <TextView
+            android:id="@+id/tvT"
+            style="@style/KeyboardTextView"
+            android:text="T" />
 
-            <TextView
-                android:id="@+id/tvR"
-                style="@style/KeyboardTextView"
-                android:text="R" />
+        <TextView
+            android:id="@+id/tvY"
+            style="@style/KeyboardTextView"
+            android:text="Y" />
 
-            <TextView
-                android:id="@+id/tvT"
-                style="@style/KeyboardTextView"
-                android:text="T" />
+        <TextView
+            android:id="@+id/tvU"
+            style="@style/KeyboardTextView"
+            android:text="U" />
 
-            <TextView
-                android:id="@+id/tvY"
-                style="@style/KeyboardTextView"
-                android:text="Y" />
+        <TextView
+            android:id="@+id/tvI"
+            style="@style/KeyboardTextView"
+            android:text="I" />
 
-            <TextView
-                android:id="@+id/tvU"
-                style="@style/KeyboardTextView"
-                android:text="U" />
+        <TextView
+            android:id="@+id/tvO"
+            style="@style/KeyboardTextView"
+            android:text="O" />
 
-            <TextView
-                android:id="@+id/tvI"
-                style="@style/KeyboardTextView"
-                android:text="I" />
+        <TextView
+            android:id="@+id/tvP"
+            style="@style/KeyboardTextView"
+            android:text="P" />
 
-            <TextView
-                android:id="@+id/tvO"
-                style="@style/KeyboardTextView"
-                android:text="O" />
+        <TextView
+            android:id="@+id/tvŠ"
+            style="@style/KeyboardTextView"
+            android:text="Š" />
 
-            <TextView
-                android:id="@+id/tvP"
-                style="@style/KeyboardTextView"
-                android:text="P" />
+        <!-- Second Row -->
+        <TextView
+            android:id="@+id/tvA"
+            style="@style/KeyboardTextView"
+            android:text="A" />
 
-            <TextView
-                android:id="@+id/tvŠ"
-                style="@style/KeyboardTextView"
-                android:text="Š" />
+        <TextView
+            android:id="@+id/tvS"
+            style="@style/KeyboardTextView"
+            android:text="S" />
 
-            <!-- Second Row -->
-            <TextView
-                android:id="@+id/tvA"
-                style="@style/KeyboardTextView"
-                android:text="A" />
+        <TextView
+            android:id="@+id/tvD"
+            style="@style/KeyboardTextView"
+            android:text="D" />
 
-            <TextView
-                android:id="@+id/tvS"
-                style="@style/KeyboardTextView"
-                android:text="S" />
+        <TextView
+            android:id="@+id/tvF"
+            style="@style/KeyboardTextView"
+            android:text="F" />
 
-            <TextView
-                android:id="@+id/tvD"
-                style="@style/KeyboardTextView"
-                android:text="D" />
+        <TextView
+            android:id="@+id/tvG"
+            style="@style/KeyboardTextView"
+            android:text="G" />
 
-            <TextView
-                android:id="@+id/tvF"
-                style="@style/KeyboardTextView"
-                android:text="F" />
+        <TextView
+            android:id="@+id/tvH"
+            style="@style/KeyboardTextView"
+            android:text="H" />
 
-            <TextView
-                android:id="@+id/tvG"
-                style="@style/KeyboardTextView"
-                android:text="G" />
+        <TextView
+            android:id="@+id/tvJ"
+            style="@style/KeyboardTextView"
+            android:text="J" />
 
-            <TextView
-                android:id="@+id/tvH"
-                style="@style/KeyboardTextView"
-                android:text="H" />
+        <TextView
+            android:id="@+id/tvK"
+            style="@style/KeyboardTextView"
+            android:text="K" />
 
-            <TextView
-                android:id="@+id/tvJ"
-                style="@style/KeyboardTextView"
-                android:text="J" />
+        <TextView
+            android:id="@+id/tvL"
+            style="@style/KeyboardTextView"
+            android:text="L" />
 
-            <TextView
-                android:id="@+id/tvK"
-                style="@style/KeyboardTextView"
-                android:text="K" />
+        <TextView
+            android:id="@+id/tvČ"
+            style="@style/KeyboardTextView"
+            android:text="Č" />
 
-            <TextView
-                android:id="@+id/tvL"
-                style="@style/KeyboardTextView"
-                android:text="L" />
+        <TextView
+            android:id="@+id/tvĆ"
+            style="@style/KeyboardTextView"
+            android:text="Ć" />
 
-            <TextView
-                android:id="@+id/tvČ"
-                style="@style/KeyboardTextView"
-                android:text="Č" />
+        <!-- Third Row -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1" />
 
-            <TextView
-                android:id="@+id/tvĆ"
-                style="@style/KeyboardTextView"
-                android:text="Ć" />
+        <TextView
+            android:id="@+id/tvZ"
+            style="@style/KeyboardTextView"
+            android:text="Z" />
 
-            <!-- Third Row -->
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1" />
+        <TextView
+            android:id="@+id/tvX"
+            style="@style/KeyboardTextView"
+            android:text="X" />
 
-            <TextView
-                android:id="@+id/tvZ"
-                style="@style/KeyboardTextView"
-                android:text="Z" />
+        <TextView
+            android:id="@+id/tvC"
+            style="@style/KeyboardTextView"
+            android:text="C" />
 
-            <TextView
-                android:id="@+id/tvX"
-                style="@style/KeyboardTextView"
-                android:text="X" />
+        <TextView
+            android:id="@+id/tvV"
+            style="@style/KeyboardTextView"
+            android:text="V" />
 
-            <TextView
-                android:id="@+id/tvC"
-                style="@style/KeyboardTextView"
-                android:text="C" />
+        <TextView
+            android:id="@+id/tvB"
+            style="@style/KeyboardTextView"
+            android:text="B" />
 
-            <TextView
-                android:id="@+id/tvV"
-                style="@style/KeyboardTextView"
-                android:text="V" />
+        <TextView
+            android:id="@+id/tvN"
+            style="@style/KeyboardTextView"
+            android:text="N" />
 
-            <TextView
-                android:id="@+id/tvB"
-                style="@style/KeyboardTextView"
-                android:text="B" />
+        <TextView
+            android:id="@+id/tvM"
+            style="@style/KeyboardTextView"
+            android:text="M" />
 
-            <TextView
-                android:id="@+id/tvN"
-                style="@style/KeyboardTextView"
-                android:text="N" />
+        <TextView
+            android:id="@+id/tvĐ"
+            style="@style/KeyboardTextView"
+            android:text="Đ" />
 
-            <TextView
-                android:id="@+id/tvM"
-                style="@style/KeyboardTextView"
-                android:text="M" />
+        <TextView
+            android:id="@+id/tvŽ"
+            style="@style/KeyboardTextView"
+            android:text="Ž" />
+    </GridLayout>
 
-            <TextView
-                android:id="@+id/tvĐ"
-                style="@style/KeyboardTextView"
-                android:text="Đ" />
-
-            <TextView
-                android:id="@+id/tvŽ"
-                style="@style/KeyboardTextView"
-                android:text="Ž" />
-        </GridLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
