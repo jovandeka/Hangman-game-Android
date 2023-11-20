@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     private int remainingGuesses = 6;
     private List<TextView> letterTextViews;
 
-    private TextView letterTextView;
     private TextView EndTextView;
     private TextView EndWordTextView;
     private TextView guessesTextView;
@@ -95,12 +95,12 @@ public class MainActivity extends AppCompatActivity {
     private void loadWord(String word) {
         String input = word;
         secretWord = input.replaceAll("\\s+", " ");
-        int len = word.length();
+
         displayWord = new StringBuilder();
-        for(int i = 0; i<len;i++){
-            if(word.charAt(i)!=' '){
+        for(int i = 0; i<secretWord.length();i++){
+            if(secretWord.charAt(i)!=' '){
                 displayWord.append(secretWord.charAt(i));
-            }else if(word.charAt(i)==' ' && word.charAt(i-1)!=' '){
+            }else{
                 displayWord.append(' ');
             }
         }
@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
             TextView letterTextView = createLetterTextView(letter);
             letterTextViews.add(letterTextView);
         }
-
     }
 
     private void loadWordList(String category) {
@@ -119,22 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         int randomIndex = (int) (Math.random() * wordArray.length);
         String input = wordArray[randomIndex];
-        secretWord = input.replaceAll("\\s+", " ");
-
-        displayWord = new StringBuilder();
-        for(int i = 0; i<secretWord.length();i++){
-            if(secretWord.charAt(i)!=' '){
-                displayWord.append(secretWord.charAt(i));
-            }else if(secretWord.charAt(i)==' '){
-                displayWord.append(' ');
-            }
-        }
-
-        for (int i = 0; i < displayWord.length(); i++) {
-            char letter = displayWord.charAt(i);
-            TextView letterTextView = createLetterTextView(letter);
-            letterTextViews.add(letterTextView);
-        }
+        loadWord(input);
     }
 
     private void setupKeyboard() {
@@ -207,11 +191,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (letter != ' ') {
             letterTextView.setLayoutParams(layoutParams);
+            letterTextView.setBackgroundColor(getResources().getColor(R.color.orange));
         } else {
             letterTextView.setLayoutParams(layoutParamsSpace);
+            letterTextView.setBackgroundColor(getResources().getColor(R.color.pale_black));
         }
-        letterTextView.setBackgroundColor(getResources().getColor(R.color.orange));
-        letterTextView.setTextColor(getResources().getColor(R.color.white));
+        letterTextView.setTextColor(getResources().getColor(R.color.orange));
         letterTextView.setTextSize(25);
         letterTextView.setTypeface(null, Typeface.BOLD);
         letterTextView.setGravity(Gravity.CENTER);
@@ -221,17 +206,14 @@ public class MainActivity extends AppCompatActivity {
     private void checkGameStatus() {
         boolean allLettersGuessed = true;
 
-        for (int i = 0; i < lettersLinearLayout.getChildCount(); i++) {
-            View child = lettersLinearLayout.getChildAt(i);
+        for (int i = 0; i < letterTextViews.size(); i++) {
+            TextView letterTextView = letterTextViews.get(i);
+            ColorDrawable drawable = (ColorDrawable) letterTextView.getBackground();
+            int backgroundColor = drawable.getColor();
 
-            if (child instanceof TextView) {
-                TextView letterTextView = (TextView) child;
-                char letter = letterTextView.getText().charAt(0);
-
-                if (letter != ' ' && letterTextView.getDrawingCacheBackgroundColor() != ContextCompat.getColor(this, R.color.pale_black)) {
-                    allLettersGuessed = false;
-                    break;
-                }
+            if (backgroundColor == ContextCompat.getColor(this, R.color.orange)) {
+                allLettersGuessed = false;
+                break;
             }
         }
 
@@ -239,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
             // Player wins
             EndTextView.setText("Congratulations!");
             EndWordTextView.setText("You guessed the word: " + secretWord);
+
             disableKeyboard();
             showTryAgainButton();
         } else if (remainingGuesses == 0) {
@@ -272,20 +255,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void resetGame() {
         remainingGuesses = 6;
+        letterTextViews.clear();
 
         if (wordArray != null && wordArray.length > 0) {
             int randomIndex = (int) (Math.random() * wordArray.length);
             String input = wordArray[randomIndex];
-            secretWord = input.replaceAll("\\s+", " ");
-
-            displayWord = new StringBuilder();
-            for(int i = 0; i<secretWord.length();i++){
-                if(secretWord.charAt(i)!=' '){
-                    displayWord.append(secretWord.charAt(i));
-                }else if(secretWord.charAt(i)==' '){
-                    displayWord.append(' ');
-                }
-            }
+            loadWord(input);
         } else {
             secretWord = "DEFAULT";
             displayWord = new StringBuilder("_".repeat(secretWord.length()));
@@ -304,24 +279,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void resetGameRand() {
         remainingGuesses = 6;
+        letterTextViews.clear();
 
         WordRandomizer.randomizeCategoryAndWord(MainActivity.this);
 
-        secretWord = WordRandomizer.randomWord;
-
-        displayWord = new StringBuilder();
-        for(int i = 0; i<secretWord.length();i++){
-            if(secretWord.charAt(i)!=' '){
-                displayWord.append(secretWord.charAt(i));
-            }else if(secretWord.charAt(i)==' '){
-                displayWord.append(' ');
-            }
-        }
+        categoryTextView.setText("("+WordRandomizer.randomCategory+")");
+        loadWord(WordRandomizer.randomWord);
 
         EndTextView.setText("");
         EndWordTextView.setText("");
 
-        categoryTextView.setText(WordRandomizer.randomCategory);
         updateWordDisplay();
         displayHangman(remainingGuesses);
         enableKeyboard();
