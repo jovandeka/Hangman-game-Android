@@ -17,7 +17,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,14 +30,16 @@ public class MainActivity extends AppCompatActivity {
     private String secretWord;
     private StringBuilder displayWord;
     private int remainingGuesses = 6;
+    private List<TextView> letterTextViews;
 
-    private TextView wordTextView;
+    private TextView letterTextView;
     private TextView EndTextView;
     private TextView EndWordTextView;
     private TextView guessesTextView;
     private TextView categoryTextView;
     private GridLayout keyboardGrid;
     private ImageView backImageView;
+    private LinearLayout lettersLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         categoryTextView = findViewById(R.id.categoryTextView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
         backImageView = findViewById(R.id.backImageView);
+        lettersLinearLayout = findViewById(R.id.lettersLinearLayout);
+
+        letterTextViews = new ArrayList<>();
 
         Intent intent = getIntent();
         if (intent.hasExtra("category")) {
@@ -90,10 +99,16 @@ public class MainActivity extends AppCompatActivity {
         displayWord = new StringBuilder();
         for(int i = 0; i<len;i++){
             if(word.charAt(i)!=' '){
-                displayWord.append('_');
+                displayWord.append(secretWord.charAt(i));
             }else if(word.charAt(i)==' ' && word.charAt(i-1)!=' '){
                 displayWord.append(' ');
             }
+        }
+
+        for (int i = 0; i < displayWord.length(); i++) {
+            char letter = displayWord.charAt(i);
+            TextView letterTextView = createLetterTextView(letter);
+            letterTextViews.add(letterTextView);
         }
 
     }
@@ -109,10 +124,16 @@ public class MainActivity extends AppCompatActivity {
         displayWord = new StringBuilder();
         for(int i = 0; i<secretWord.length();i++){
             if(secretWord.charAt(i)!=' '){
-                displayWord.append('_');
+                displayWord.append(secretWord.charAt(i));
             }else if(secretWord.charAt(i)==' '){
                 displayWord.append(' ');
             }
+        }
+
+        for (int i = 0; i < displayWord.length(); i++) {
+            char letter = displayWord.charAt(i);
+            TextView letterTextView = createLetterTextView(letter);
+            letterTextViews.add(letterTextView);
         }
     }
 
@@ -139,33 +160,35 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < secretWord.length(); i++) {
             if (Character.toUpperCase(secretWord.charAt(i)) == guess.charAt(0)) {
-                displayWord.setCharAt(i, secretWord.charAt(i));
                 letterGuessed = true;
             }
         }
 
         if (!letterGuessed) {
             remainingGuesses--;
+        }else{
+            updateLetterBackgrounds(guess);
         }
 
         displayHangman(remainingGuesses);
-        updateWordDisplay();
         checkGameStatus();
     }
 
-    private void updateWordDisplay() {
-        LinearLayout lettersLinearLayout = findViewById(R.id.lettersLinearLayout);
-        lettersLinearLayout.removeAllViews(); // Clear existing letters
-
-        for (int i = 0; i < displayWord.length(); i++) {
-            char letter = displayWord.charAt(i);
-            if (letter != ' ') {
-                TextView letterTextView = createLetterTextView(letter);
-                lettersLinearLayout.addView(letterTextView);
-            } else {
-                TextView spaceTextView = createLetterTextView(' ');
-                lettersLinearLayout.addView(spaceTextView);
+    private void updateLetterBackgrounds(String ch) {
+        for (int i = 0; i < letterTextViews.size(); i++) {
+            TextView letterTextView = letterTextViews.get(i);
+            String letter = letterTextView.getText().toString().toUpperCase();
+            if (!letter.equals(" ") && Objects.equals(ch, letter)) {
+                letterTextView.setBackgroundResource(R.color.pale_black);
             }
+        }
+    }
+
+    private void updateWordDisplay() {
+        lettersLinearLayout.removeAllViews();
+
+        for (TextView letterTextView : letterTextViews) {
+            lettersLinearLayout.addView(letterTextView);
         }
     }
 
@@ -173,23 +196,46 @@ public class MainActivity extends AppCompatActivity {
         TextView letterTextView = new TextView(this);
         letterTextView.setText(String.valueOf(letter));
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                70,
+                60,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        layoutParams.setMargins(0, 0, 6, 0);
+        LinearLayout.LayoutParams layoutParamsSpace = new LinearLayout.LayoutParams(
+                30,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        layoutParams.setMargins(0, 0, 3, 0);
 
-        letterTextView.setLayoutParams(layoutParams);
-        letterTextView.setTextColor(getResources().getColor(R.color.white));
+        if (letter != ' ') {
+            letterTextView.setLayoutParams(layoutParams);
+        } else {
+            letterTextView.setLayoutParams(layoutParamsSpace);
+        }
         letterTextView.setBackgroundColor(getResources().getColor(R.color.orange));
-        letterTextView.setPadding(8, 8, 8, 8);
-        letterTextView.setTextSize(30);
+        letterTextView.setTextColor(getResources().getColor(R.color.white));
+        letterTextView.setTextSize(25);
         letterTextView.setTypeface(null, Typeface.BOLD);
         letterTextView.setGravity(Gravity.CENTER);
         return letterTextView;
     }
 
     private void checkGameStatus() {
-        if (displayWord.toString().equals(secretWord)) {
+        boolean allLettersGuessed = true;
+
+        for (int i = 0; i < lettersLinearLayout.getChildCount(); i++) {
+            View child = lettersLinearLayout.getChildAt(i);
+
+            if (child instanceof TextView) {
+                TextView letterTextView = (TextView) child;
+                char letter = letterTextView.getText().charAt(0);
+
+                if (letter != ' ' && letterTextView.getDrawingCacheBackgroundColor() != ContextCompat.getColor(this, R.color.pale_black)) {
+                    allLettersGuessed = false;
+                    break;
+                }
+            }
+        }
+
+        if (allLettersGuessed) {
             // Player wins
             EndTextView.setText("Congratulations!");
             EndWordTextView.setText("You guessed the word: " + secretWord);
@@ -235,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
             displayWord = new StringBuilder();
             for(int i = 0; i<secretWord.length();i++){
                 if(secretWord.charAt(i)!=' '){
-                    displayWord.append('_');
+                    displayWord.append(secretWord.charAt(i));
                 }else if(secretWord.charAt(i)==' '){
                     displayWord.append(' ');
                 }
@@ -266,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
         displayWord = new StringBuilder();
         for(int i = 0; i<secretWord.length();i++){
             if(secretWord.charAt(i)!=' '){
-                displayWord.append('_');
+                displayWord.append(secretWord.charAt(i));
             }else if(secretWord.charAt(i)==' '){
                 displayWord.append(' ');
             }
