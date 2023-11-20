@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             loadWord(word);
         }else
          {
-            loadWordList("random");
+            loadWordList("country");
         }
 
         updateWordDisplay();
@@ -95,8 +95,17 @@ public class MainActivity extends AppCompatActivity {
         wordArray = getResources().getStringArray(wordListResourceId);
 
         int randomIndex = (int) (Math.random() * wordArray.length);
-        secretWord = wordArray[randomIndex].toUpperCase();
-        displayWord = new StringBuilder("_".repeat(secretWord.length()));
+        String input = wordArray[randomIndex];
+        secretWord = input.replaceAll("\\s+", " ");
+
+        displayWord = new StringBuilder();
+        for(int i = 0; i<secretWord.length();i++){
+            if(secretWord.charAt(i)!=' '){
+                displayWord.append('_');
+            }else if(secretWord.charAt(i)==' '){
+                displayWord.append(' ');
+            }
+        }
     }
 
     private void setupKeyboard() {
@@ -179,8 +188,17 @@ public class MainActivity extends AppCompatActivity {
 
         if (wordArray != null && wordArray.length > 0) {
             int randomIndex = (int) (Math.random() * wordArray.length);
-            secretWord = wordArray[randomIndex].toUpperCase();
-            displayWord = new StringBuilder("_".repeat(secretWord.length()));
+            String input = wordArray[randomIndex];
+            secretWord = input.replaceAll("\\s+", " ");
+
+            displayWord = new StringBuilder();
+            for(int i = 0; i<secretWord.length();i++){
+                if(secretWord.charAt(i)!=' '){
+                    displayWord.append('_');
+                }else if(secretWord.charAt(i)==' '){
+                    displayWord.append(' ');
+                }
+            }
         } else {
             secretWord = "DEFAULT";
             displayWord = new StringBuilder("_".repeat(secretWord.length()));

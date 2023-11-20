@@ -80,8 +80,8 @@
 
     <ImageView
         android:id="@+id/randBtn"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonStartGame"
         app:layout_constraintEnd_toEndOf="@+id/editTextCategory"
         app:layout_constraintTop_toTopOf="@+id/buttonStartGame"

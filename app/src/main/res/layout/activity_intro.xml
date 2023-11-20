@@ -8,124 +8,6 @@
     android:background="@color/pale_black"
     android:padding="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/guessFruitButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guessFruitButton"
-            app:srcCompat="@drawable/apple" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/guessFruitButton"
-            style="@style/CategoryButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="GUESS THE FRUIT"
-            android:fontFamily="@font/audiowide"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/guessAnimalButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guessAnimalButton"
-            app:srcCompat="@drawable/pawprint" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/guessAnimalButton"
-            style="@style/CategoryButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@id/guessFruitButton"
-            android:fontFamily="@font/audiowide"
-            android:layout_marginTop="10dp"
-            android:text="GUESS THE ANIMAL"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guessFruitButton" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/guessColorsButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guessColorsButton"
-            app:srcCompat="@drawable/color_palette" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/guessColorsButton"
-            style="@style/CategoryButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@id/guessAnimalButton"
-            android:fontFamily="@font/audiowide"
-            android:layout_marginTop="10dp"
-            android:text="GUESS THE COLOR"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guessAnimalButton" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:elevation="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/guessRandomButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guessRandomButton"
-            app:srcCompat="@drawable/dice" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/guessRandomButton"
-            style="@style/CategoryButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@id/guessColorsButton"
-            android:fontFamily="@font/audiowide"
-            android:layout_marginTop="10dp"
-            android:text="GUESS RANDOM"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guessColorsButton" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <ImageView
         android:id="@+id/pvp_button"
         android:layout_width="100dp"
@@ -133,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/categoryScrollView"
         app:srcCompat="@drawable/vs_button" />
 
     <ImageView
@@ -141,11 +23,346 @@
         android:layout_width="330dp"
         android:layout_height="80dp"
         android:layout_marginEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/categoryScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/title_hangman" />
+
+    <ScrollView
+        android:id="@+id/categoryScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="465dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessFruitButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessFruitButton"
+                app:srcCompat="@drawable/apple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessFruitButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE FRUIT"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessAnimalButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessAnimalButton"
+                app:srcCompat="@drawable/pawprint" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessAnimalButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE ANIMAL"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessFruitButton" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessColorsButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessColorsButton"
+                app:srcCompat="@drawable/color_palette" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessColorsButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE COLOR"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessAnimalButton" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessInstrumentButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessInstrumentButton"
+                app:srcCompat="@drawable/guitar" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessInstrumentButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE INSTRUMENT"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessColorsButton" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessSportButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessSportButton"
+                app:srcCompat="@drawable/sports" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessSportButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE SPORT"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessInstrumentButton" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessClubButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessClubButton"
+                app:srcCompat="@drawable/club" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessClubButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE CLUB"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessSportButton" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessCountryButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessCountryButton"
+                app:srcCompat="@drawable/country" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessCountryButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE COUNTRY"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessClubButton" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessFoodButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessFoodButton"
+                app:srcCompat="@drawable/food" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessFoodButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE FOOD"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessCountryButton" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessVegetableButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessVegetableButton"
+                app:srcCompat="@drawable/vegetable" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessVegetableButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE VEGETABLE"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessFoodButton" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessMovieButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessMovieButton"
+                app:srcCompat="@drawable/movie" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessMovieButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE MOVIE"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessVegetableButton" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessBrandButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessBrandButton"
+                app:srcCompat="@drawable/brand" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessBrandButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE BRAND"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessMovieButton" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:elevation="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guessBandButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guessBandButton"
+                app:srcCompat="@drawable/band" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/guessBandButton"
+                style="@style/CategoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/audiowide"
+                android:text="GUESS THE BAND"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guessBrandButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

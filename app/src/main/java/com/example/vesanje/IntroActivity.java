@@ -27,7 +27,15 @@ public class IntroActivity extends AppCompatActivity {
         Button guessFruitButton = findViewById(R.id.guessFruitButton);
         Button guessAnimalButton = findViewById(R.id.guessAnimalButton);
         Button guessColorsButton = findViewById(R.id.guessColorsButton);
-        Button guessRandomButton = findViewById(R.id.guessRandomButton);
+        Button guessInstrumentButton = findViewById(R.id.guessInstrumentButton);
+        Button guessSportButton = findViewById(R.id.guessSportButton);
+        Button guessClubButton = findViewById(R.id.guessClubButton);
+        Button guessCountryButton = findViewById(R.id.guessCountryButton);
+        Button guessFoodButton = findViewById(R.id.guessFoodButton);
+        Button guessVegetableButton = findViewById(R.id.guessVegetableButton);
+        Button guessMovieButton = findViewById(R.id.guessMovieButton);
+        Button guessBrandButton = findViewById(R.id.guessBrandButton);
+        Button guessBandButton = findViewById(R.id.guessBandButton);
 
         guessFruitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,13 +57,67 @@ public class IntroActivity extends AppCompatActivity {
                 startGame("color");
             }
         });
-
-        guessRandomButton.setOnClickListener(new View.OnClickListener() {
+        guessInstrumentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startGame("random");
+                startGame("instrument");
             }
         });
+
+        guessSportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("sport");
+            }
+        });
+
+        guessClubButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("club");
+            }
+        });
+        guessCountryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("country");
+            }
+        });
+
+        guessFoodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("food");
+            }
+        });
+
+        guessVegetableButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("vegetable");
+            }
+        });
+        guessMovieButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("movie");
+            }
+        });
+
+        guessBrandButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("brand");
+            }
+        });
+
+        guessBandButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame("band");
+            }
+        });
+
         pvpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
