@@ -49,14 +49,19 @@ public class MainActivity extends AppCompatActivity {
             String category = intent.getStringExtra("category");
             categoryTextView.setText("(" + category + ")");
             loadWordList(category);
-        }else if(intent.hasExtra("word")) {
+        }else if(intent.hasExtra("categoryPvp")) {
             String word = intent.getStringExtra("word");
             String categoryPvp = intent.getStringExtra("categoryPvp");
             String category = categoryPvp.replaceAll("\\s+", " ");
             categoryTextView.setText("(" + category + ")");
             loadWord(word);
-        }else
-         {
+        }else if(intent.hasExtra("categoryRand")) {
+            String word = intent.getStringExtra("word");
+            String categoryRand = intent.getStringExtra("categoryRand");
+            String category = categoryRand.replaceAll("\\s+", " ");
+            categoryTextView.setText("(" + category + ")");
+            loadWord(word);
+        }else {
             loadWordList("country");
         }
 
@@ -172,11 +177,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
-                if(intent.hasExtra("category")){
-                    resetGame();
-                }else{
+                if(intent.hasExtra("categoryPvp")){
                     Intent intent2 = new Intent(MainActivity.this, TwoPlayerGameActivity.class);
                     startActivity(intent2);
+                }else if(intent.hasExtra("categoryRand")){
+                    resetGameRand();
+                }else{
+                    resetGame();
                 }
 
             }
@@ -207,6 +214,34 @@ public class MainActivity extends AppCompatActivity {
         EndTextView.setText("");
         EndWordTextView.setText("");
 
+        updateWordDisplay();
+        displayHangman(remainingGuesses);
+        enableKeyboard();
+
+        Button tryAgainButton = findViewById(R.id.playAgainButton);
+        tryAgainButton.setVisibility(View.GONE);
+    }
+
+    private void resetGameRand() {
+        remainingGuesses = 6;
+
+        WordRandomizer.randomizeCategoryAndWord(MainActivity.this);
+
+        secretWord = WordRandomizer.randomWord;
+
+        displayWord = new StringBuilder();
+        for(int i = 0; i<secretWord.length();i++){
+            if(secretWord.charAt(i)!=' '){
+                displayWord.append('_');
+            }else if(secretWord.charAt(i)==' '){
+                displayWord.append(' ');
+            }
+        }
+
+        EndTextView.setText("");
+        EndWordTextView.setText("");
+
+        categoryTextView.setText(WordRandomizer.randomCategory);
         updateWordDisplay();
         displayHangman(remainingGuesses);
         enableKeyboard();

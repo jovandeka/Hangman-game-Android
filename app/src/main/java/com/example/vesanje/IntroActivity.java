@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import java.util.Random;
+
 public class IntroActivity extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce = false;
@@ -24,6 +26,7 @@ public class IntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
         ImageView pvpButton = findViewById(R.id.pvp_button);
+        ImageView randomButton = findViewById(R.id.random_button);
         Button guessFruitButton = findViewById(R.id.guessFruitButton);
         Button guessAnimalButton = findViewById(R.id.guessAnimalButton);
         Button guessColorsButton = findViewById(R.id.guessColorsButton);
@@ -125,6 +128,18 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        randomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WordRandomizer.randomizeCategoryAndWord(IntroActivity.this);
+
+                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+                intent.putExtra("word", WordRandomizer.randomWord);
+                intent.putExtra("categoryRand", WordRandomizer.randomCategory);
+                startActivity(intent);
+            }
+        });
     }
 
     private void startGame(String category) {
@@ -144,4 +159,5 @@ public class IntroActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000); // Change the delay as needed
     }
+
 }
