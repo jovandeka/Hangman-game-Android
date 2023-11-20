@@ -2,12 +2,16 @@ package com.example.vesanje;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        wordTextView = findViewById(R.id.wordTextView);
         EndTextView = findViewById(R.id.EndTextView);
         EndWordTextView = findViewById(R.id.EndWordTextView);
         guessesTextView = findViewById(R.id.guessesTextView);
@@ -151,7 +154,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateWordDisplay() {
-        wordTextView.setText(displayWord.toString());
+        LinearLayout lettersLinearLayout = findViewById(R.id.lettersLinearLayout);
+        lettersLinearLayout.removeAllViews(); // Clear existing letters
+
+        for (int i = 0; i < displayWord.length(); i++) {
+            char letter = displayWord.charAt(i);
+            if (letter != ' ') {
+                TextView letterTextView = createLetterTextView(letter);
+                lettersLinearLayout.addView(letterTextView);
+            } else {
+                TextView spaceTextView = createLetterTextView(' ');
+                lettersLinearLayout.addView(spaceTextView);
+            }
+        }
+    }
+
+    private TextView createLetterTextView(char letter) {
+        TextView letterTextView = new TextView(this);
+        letterTextView.setText(String.valueOf(letter));
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                50,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        layoutParams.setMargins(0, 0, 6, 0);
+
+        letterTextView.setLayoutParams(layoutParams);
+        letterTextView.setTextColor(getResources().getColor(R.color.white));
+        letterTextView.setBackgroundColor(getResources().getColor(R.color.orange));
+        letterTextView.setPadding(8, 8, 8, 8);
+        letterTextView.setTextSize(20);
+        letterTextView.setTypeface(null, Typeface.BOLD);
+        letterTextView.setGravity(Gravity.CENTER);
+        return letterTextView;
     }
 
     private void checkGameStatus() {

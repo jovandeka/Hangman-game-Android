@@ -27,6 +27,28 @@
         android:layout_marginTop="100dp"
         android:textSize="15sp" />
 
+    <LinearLayout
+        android:id="@+id/lettersLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/categoryTextView"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/letterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <!--
     <TextView
         android:id="@+id/wordTextView"
         android:layout_width="wrap_content"
@@ -40,14 +62,14 @@
         android:textSize="45sp"
         android:text="_ _ _ _ _"
         style="@style/WordButton"/>
-
+    -->
     <TextView
         android:id="@+id/guessesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/orange"
         android:textStyle="bold"
-        android:layout_below="@id/wordTextView"
+        android:layout_below="@id/lettersLinearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:textSize="16sp"
