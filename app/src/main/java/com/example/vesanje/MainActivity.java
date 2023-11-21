@@ -1,16 +1,10 @@
 package com.example.vesanje;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -18,16 +12,13 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -178,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 int targetColor = ContextCompat.getColor(this, R.color.pale_black);
 
                 ValueAnimator colorAnimator = ValueAnimator.ofArgb(currentColor, targetColor);
-                colorAnimator.setDuration(300);
+                colorAnimator.setDuration(200);
 
                 colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
@@ -228,13 +219,6 @@ public class MainActivity extends AppCompatActivity {
         return letterTextView;
     }
 
-    private void animateAppear(View view) {
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
-        fadeIn.setDuration(1000);
-
-        fadeIn.start();
-    }
-
     private void checkGameStatus() {
 
         if (guessedWord.toString().equals(secretWord)) {
@@ -244,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             showTryAgainButton();
 
             EndTextView.setText("Congratulations!");
-            EndTextView.setTextColor(getResources().getColor(R.color.neon_green));
+            EndTextView.setTextColor(getResources().getColor(R.color.right_green));
 
             disableKeyboard();
             animateAppear(tryAgainButton);
@@ -259,9 +243,9 @@ public class MainActivity extends AppCompatActivity {
             showTryAgainButton();
 
             EndTextView.setText("Sorry, you ran out of guesses.");
-            EndTextView.setTextColor(getResources().getColor(R.color.neon_red));
-            EndWordTextView.setText("The word was: " + secretWord);
-            EndWordTextView.setTextColor(getResources().getColor(R.color.neon_red));
+            EndTextView.setTextColor(getResources().getColor(R.color.wrong_red));
+            EndWordTextView.setText("The answer was: " + secretWord);
+            EndWordTextView.setTextColor(getResources().getColor(R.color.wrong_red));
 
             animateAppear(tryAgainButton);
             animateAppear(EndTextView);
@@ -316,6 +300,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void animateAppear(View view) {
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
+        fadeIn.setDuration(800);
+
+        fadeIn.start();
     }
 
     private void resetGame() {
