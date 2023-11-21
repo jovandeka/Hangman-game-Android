@@ -1,6 +1,8 @@
 package com.example.vesanje;
 
 import android.animation.ObjectAnimator;
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private String[] wordArray;
     private String secretWord;
     private StringBuilder displayWord;
+    private StringBuilder guessedWord;
     private int remainingGuesses = 6;
     private List<TextView> letterTextViews;
 
@@ -97,11 +100,14 @@ public class MainActivity extends AppCompatActivity {
         secretWord = input.replaceAll("\\s+", " ");
 
         displayWord = new StringBuilder();
+        guessedWord = new StringBuilder();
         for(int i = 0; i<secretWord.length();i++){
             if(secretWord.charAt(i)!=' '){
                 displayWord.append(secretWord.charAt(i));
+                guessedWord.append('_');
             }else{
                 displayWord.append(' ');
+                guessedWord.append(' ');
             }
         }
 
@@ -144,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < secretWord.length(); i++) {
             if (Character.toUpperCase(secretWord.charAt(i)) == guess.charAt(0)) {
+                guessedWord.setCharAt(i, secretWord.charAt(i));
                 letterGuessed = true;
             }
         }
@@ -163,7 +170,21 @@ public class MainActivity extends AppCompatActivity {
             TextView letterTextView = letterTextViews.get(i);
             String letter = letterTextView.getText().toString().toUpperCase();
             if (!letter.equals(" ") && Objects.equals(ch, letter)) {
-                letterTextView.setBackgroundResource(R.color.pale_black);
+                int currentColor = ContextCompat.getColor(this, R.color.orange);
+                int targetColor = ContextCompat.getColor(this, R.color.pale_black);
+
+                ValueAnimator colorAnimator = ValueAnimator.ofArgb(currentColor, targetColor);
+                colorAnimator.setDuration(300);
+
+                colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animator) {
+                        int animatedColor = (int) animator.getAnimatedValue();
+                        letterTextView.setBackgroundColor(animatedColor);
+                    }
+                });
+
+                colorAnimator.start();
             }
         }
     }
@@ -204,32 +225,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkGameStatus() {
-        boolean allLettersGuessed = true;
 
-        for (int i = 0; i < letterTextViews.size(); i++) {
-            TextView letterTextView = letterTextViews.get(i);
-            ColorDrawable drawable = (ColorDrawable) letterTextView.getBackground();
-            int backgroundColor = drawable.getColor();
-
-            if (backgroundColor == ContextCompat.getColor(this, R.color.orange)) {
-                allLettersGuessed = false;
-                break;
-            }
-        }
-
-        if (allLettersGuessed) {
+        if (guessedWord.toString().equals(secretWord)) {
             // Player wins
             EndTextView.setText("Congratulations!");
             EndWordTextView.setText("You guessed the word: " + secretWord);
 
             disableKeyboard();
             showTryAgainButton();
+
+            animateLayoutParamsChange();
+
         } else if (remainingGuesses == 0) {
             // Player loses
             EndTextView.setText("Sorry, you ran out of guesses.");
             EndWordTextView.setText("The word was: " + secretWord);
             disableKeyboard();
             showTryAgainButton();
+        }
+    }
+
+    private void animateLayoutParamsChange() {
+        for (final TextView letterTextView : letterTextViews) {
+            final LinearLayout.LayoutParams startParams = (LinearLayout.LayoutParams) letterTextView.getLayoutParams();
+            final LinearLayout.LayoutParams endParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+            final ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
+            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    float fraction = animation.getAnimatedFraction();
+
+                    int width = (int) (startParams.width + fraction * (endParams.width - startParams.width));
+                    int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
+                    params.setMargins(startParams.leftMargin, startParams.topMargin, startParams.rightMargin, startParams.bottomMargin);
+
+                    letterTextView.setLayoutParams(params);
+                }
+            });
+
+            animator.setDuration(200);
+            animator.start();
         }
     }
 
