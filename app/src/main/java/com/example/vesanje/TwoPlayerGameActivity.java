@@ -1,5 +1,8 @@
 package com.example.vesanje;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +17,7 @@ import java.util.Random;
 public class TwoPlayerGameActivity extends AppCompatActivity {
 
     private EditText editTextWord, editTextCategory;
-    private ImageView backImageView, randBtn;
+    private ImageView backImageView, randBtn, movingImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         editTextCategory = findViewById(R.id.editTextCategory);
         backImageView = findViewById(R.id.backImageView);
         randBtn = findViewById(R.id.randBtn);
+        movingImageView = findViewById(R.id.hangmanImageView);
 
         randBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +37,9 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
 
                 editTextWord.setText(WordRandomizer.randomWord);
                 editTextCategory.setText(WordRandomizer.randomCategory);
+
+                randBtn.setEnabled(false);
+                moveImage();
             }
         });
 
@@ -72,5 +79,44 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
     private static boolean isValidWord(String word) {
 
         return word.matches("^[a-zA-ZćčđžšĆČĐŽŠ ]+$");
+    }
+
+    private void moveImage() {
+        float startY = movingImageView.getTranslationY();
+        float endY = startY - 80;
+
+        ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(movingImageView, "translationY", startY, endY);
+        moveUpAnimator.setDuration(50);
+
+        ObjectAnimator moveDownAnimator = ObjectAnimator.ofFloat(movingImageView, "translationY", endY, startY);
+        moveDownAnimator.setDuration(150);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playSequentially(moveUpAnimator, moveDownAnimator);
+
+        animatorSet.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                // Animation start logic, if needed
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                randBtn.setEnabled(true);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                // Animation cancel logic, if needed
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                // Animation repeat logic, if needed
+            }
+        });
+
+        // Start the animation
+        animatorSet.start();
     }
 }

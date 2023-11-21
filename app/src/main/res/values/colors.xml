@@ -11,6 +11,7 @@
     <color name="orange">#FF9A2C</color>
     <color name="gold">#FFD700</color>
     <color name="pale_black">#171A1C</color>
+    <color name="beige">#fbeabd</color>
     <color name="right_green">#55dd00</color>
-    <color name="wrong_red">#b42435</color>
+    <color name="wrong_red">#FF3131</color>
 </resources>

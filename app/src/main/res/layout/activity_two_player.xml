@@ -27,6 +27,7 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal"
         android:hint="@string/editTextWord"
+        android:elevation="20dp"
         android:padding="12dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
@@ -46,6 +47,7 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal"
         android:hint="@string/editTextCategory"
+        android:elevation="20dp"
         android:padding="12dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
@@ -69,14 +71,14 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/hangmanImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextWord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/capital" />
+        app:srcCompat="@mipmap/hangman" />
 
     <ImageView
         android:id="@+id/randBtn"
