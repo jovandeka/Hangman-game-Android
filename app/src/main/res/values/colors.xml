@@ -11,4 +11,6 @@
     <color name="orange">#FF9A2C</color>
     <color name="gold">#FFD700</color>
     <color name="pale_black">#171A1C</color>
+    <color name="neon_green">#0FFF50</color>
+    <color name="neon_red">#FF3131</color>
 </resources>

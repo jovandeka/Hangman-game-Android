@@ -1,5 +1,7 @@
 package com.example.vesanje;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private int remainingGuesses = 6;
     private List<TextView> letterTextViews;
 
+    Button tryAgainButton;
     private TextView EndTextView;
     private TextView EndWordTextView;
     private TextView guessesTextView;
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tryAgainButton = findViewById(R.id.playAgainButton);
         EndTextView = findViewById(R.id.EndTextView);
         EndWordTextView = findViewById(R.id.EndWordTextView);
         guessesTextView = findViewById(R.id.guessesTextView);
@@ -224,24 +228,45 @@ public class MainActivity extends AppCompatActivity {
         return letterTextView;
     }
 
+    private void animateAppear(View view) {
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
+        fadeIn.setDuration(1000);
+
+        fadeIn.start();
+    }
+
     private void checkGameStatus() {
 
         if (guessedWord.toString().equals(secretWord)) {
-            // Player wins
+
+            EndTextView.setAlpha(0f);
+            tryAgainButton.setAlpha(0f);
+            showTryAgainButton();
+
             EndTextView.setText("Congratulations!");
-            EndWordTextView.setText("You guessed the word: " + secretWord);
+            EndTextView.setTextColor(getResources().getColor(R.color.neon_green));
 
             disableKeyboard();
-            showTryAgainButton();
+            animateAppear(tryAgainButton);
+            animateAppear(EndTextView);
 
             animateLayoutParamsChange();
 
         } else if (remainingGuesses == 0) {
-            // Player loses
-            EndTextView.setText("Sorry, you ran out of guesses.");
-            EndWordTextView.setText("The word was: " + secretWord);
-            disableKeyboard();
+            EndTextView.setAlpha(0f);
+            EndWordTextView.setAlpha(0f);
+            tryAgainButton.setAlpha(0f);
             showTryAgainButton();
+
+            EndTextView.setText("Sorry, you ran out of guesses.");
+            EndTextView.setTextColor(getResources().getColor(R.color.neon_red));
+            EndWordTextView.setText("The word was: " + secretWord);
+            EndWordTextView.setTextColor(getResources().getColor(R.color.neon_red));
+
+            animateAppear(tryAgainButton);
+            animateAppear(EndTextView);
+            animateAppear(EndWordTextView);
+            disableKeyboard();
         }
     }
 
@@ -263,19 +288,18 @@ public class MainActivity extends AppCompatActivity {
                     int height = LinearLayout.LayoutParams.WRAP_CONTENT;
 
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
-                    params.setMargins(startParams.leftMargin, startParams.topMargin, startParams.rightMargin, startParams.bottomMargin);
+                    params.setMargins(startParams.leftMargin, 0, startParams.rightMargin, 0);
 
                     letterTextView.setLayoutParams(params);
                 }
             });
 
-            animator.setDuration(200);
+            animator.setDuration(300);
             animator.start();
         }
     }
 
     private void showTryAgainButton() {
-        Button tryAgainButton = findViewById(R.id.playAgainButton);
         tryAgainButton.setVisibility(View.VISIBLE);
         tryAgainButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -426,4 +450,5 @@ public class MainActivity extends AppCompatActivity {
 
         guessesTextView.setText(hangmanBuilder.toString());
     }
+
 }
