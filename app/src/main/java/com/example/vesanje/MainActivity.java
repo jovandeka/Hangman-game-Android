@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.provider.SyncStateContract;
 import android.view.Gravity;
@@ -170,6 +171,31 @@ public class MainActivity extends AppCompatActivity {
         checkGameStatus();
     }
 
+    private void updateWrongBackgrounds() {
+        for (int i = 0; i < letterTextViews.size(); i++) {
+            TextView letterTextView = letterTextViews.get(i);
+            ColorDrawable cd = (ColorDrawable) letterTextView.getBackground();
+            int colorCode = cd.getColor();
+            if (colorCode == getResources().getColor(R.color.orange)) {
+
+                int targetColor = ContextCompat.getColor(this, R.color.wrong_red);
+
+                ValueAnimator colorAnimator = ValueAnimator.ofArgb(colorCode, targetColor);
+                colorAnimator.setDuration(800);
+
+                colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animator) {
+                        int animatedColor = (int) animator.getAnimatedValue();
+                        letterTextView.setBackgroundColor(animatedColor);
+                    }
+                });
+
+                colorAnimator.start();
+            }
+        }
+    }
+
     private void updateLetterBackgrounds(String ch) {
         for (int i = 0; i < letterTextViews.size(); i++) {
             TextView letterTextView = letterTextViews.get(i);
@@ -179,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 int targetColor = ContextCompat.getColor(this, R.color.pale_black);
 
                 ValueAnimator colorAnimator = ValueAnimator.ofArgb(currentColor, targetColor);
-                colorAnimator.setDuration(200);
+                colorAnimator.setDuration(400);
 
                 colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
@@ -237,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
             EndTextView.setAlpha(0f);
             tryAgainButton.setAlpha(0f);
             showTryAgainButton();
+            tryAgainButton.setBackgroundResource(R.drawable.play_again_green);
 
             EndTextView.setText("Congratulations!");
 
@@ -251,6 +278,8 @@ public class MainActivity extends AppCompatActivity {
             EndWordTextView.setAlpha(0f);
             tryAgainButton.setAlpha(0f);
             showTryAgainButton();
+            tryAgainButton.setBackgroundResource(R.drawable.play_again_red);
+            updateWrongBackgrounds();
 
             EndTextView.setText("You ran out of guesses");
             EndWordTextView.setText("The answer was: " + secretWord);
