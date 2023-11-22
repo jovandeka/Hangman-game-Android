@@ -67,7 +67,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/guessFruitButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guessFruitButton"
-                app:srcCompat="@drawable/apple" />
+                app:srcCompat="@drawable/fruit" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guessFruitButton"
@@ -105,7 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/guessAnimalButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guessAnimalButton"
-                app:srcCompat="@drawable/pawprint" />
+                app:srcCompat="@drawable/animal" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guessAnimalButton"
@@ -144,7 +144,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/guessColorsButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guessColorsButton"
-                app:srcCompat="@drawable/color_palette" />
+                app:srcCompat="@drawable/color" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guessColorsButton"
@@ -183,7 +183,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/guessInstrumentButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guessInstrumentButton"
-                app:srcCompat="@drawable/guitar" />
+                app:srcCompat="@drawable/instrument" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guessInstrumentButton"
@@ -222,7 +222,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/guessSportButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guessSportButton"
-                app:srcCompat="@drawable/sports" />
+                app:srcCompat="@drawable/sport" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guessSportButton"

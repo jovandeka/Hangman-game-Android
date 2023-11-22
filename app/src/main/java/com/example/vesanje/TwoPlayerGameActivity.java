@@ -71,6 +71,10 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         String word = editTextWord.getText().toString().trim();
         String categoryPvp = editTextCategory.getText().toString().trim();
 
+        if(categoryPvp.isEmpty()){
+            categoryPvp = "guess";
+        }
+
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("word", word);
         intent.putExtra("categoryPvp", categoryPvp);

@@ -5,6 +5,7 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView EndTextView;
     private TextView EndWordTextView;
     private TextView categoryTextView;
+    private ImageView categoryImageView;
     private GridLayout keyboardGrid;
     private ImageView backImageView;
     private LinearLayout lettersLinearLayout;
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         EndTextView = findViewById(R.id.EndTextView);
         EndWordTextView = findViewById(R.id.EndWordTextView);
         categoryTextView = findViewById(R.id.categoryTextView);
+        categoryImageView = findViewById(R.id.categoryImageView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
         backImageView = findViewById(R.id.backImageView);
         lettersLinearLayout = findViewById(R.id.lettersLinearLayout);
@@ -57,19 +61,25 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.hasExtra("category")) {
             String category = intent.getStringExtra("category");
-            categoryTextView.setText("(" + category + ")");
+            categoryTextView.setText(category);
+            categoryImageView.setImageResource(getResources().getIdentifier(category, "drawable", getPackageName()));
             loadWordList(category);
         }else if(intent.hasExtra("categoryPvp")) {
             String word = intent.getStringExtra("word");
             String categoryPvp = intent.getStringExtra("categoryPvp");
             String category = categoryPvp.replaceAll("\\s+", " ");
-            categoryTextView.setText("(" + category + ")");
+            categoryTextView.setText(category);
+            int catImg = getResources().getIdentifier(category, "drawable", getPackageName());
+            if(catImg != 0){
+                categoryImageView.setImageResource(catImg);
+            }
             loadWord(word);
         }else if(intent.hasExtra("categoryRand")) {
             String word = intent.getStringExtra("word");
             String categoryRand = intent.getStringExtra("categoryRand");
             String category = categoryRand.replaceAll("\\s+", " ");
-            categoryTextView.setText("(" + category + ")");
+            categoryTextView.setText(category);
+            categoryImageView.setImageResource(getResources().getIdentifier(category, "drawable", getPackageName()));
             loadWord(word);
         }else {
             loadWordList("country");
@@ -214,7 +224,8 @@ public class MainActivity extends AppCompatActivity {
         }
         letterTextView.setTextColor(getResources().getColor(R.color.orange));
         letterTextView.setTextSize(25);
-        letterTextView.setTypeface(null, Typeface.BOLD);
+        Typeface font = ResourcesCompat.getFont(this, R.font.play_bold);
+        letterTextView.setTypeface(font);
         letterTextView.setGravity(Gravity.CENTER);
         return letterTextView;
     }
@@ -339,7 +350,9 @@ public class MainActivity extends AppCompatActivity {
 
         WordRandomizer.randomizeCategoryAndWord(MainActivity.this);
 
-        categoryTextView.setText("("+WordRandomizer.randomCategory+")");
+        String category = WordRandomizer.randomCategory;
+        categoryTextView.setText(category);
+        categoryImageView.setImageResource(getResources().getIdentifier(category, "drawable", getPackageName()));
         loadWord(WordRandomizer.randomWord);
 
         EndTextView.setText("");
