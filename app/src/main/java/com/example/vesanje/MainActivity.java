@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
         TextView letterTextView = new TextView(this);
         letterTextView.setText(String.valueOf(letter));
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                60,
+                65,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
         LinearLayout.LayoutParams layoutParamsSpace = new LinearLayout.LayoutParams(
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
             letterTextView.setBackgroundColor(getResources().getColor(R.color.pale_black));
         }
         letterTextView.setTextColor(getResources().getColor(R.color.orange));
-        letterTextView.setTextSize(25);
+        letterTextView.setTextSize(28);
         Typeface font = ResourcesCompat.getFont(this, R.font.play_bold);
         letterTextView.setTypeface(font);
         letterTextView.setGravity(Gravity.CENTER);
@@ -239,7 +239,6 @@ public class MainActivity extends AppCompatActivity {
             showTryAgainButton();
 
             EndTextView.setText("Congratulations!");
-            EndTextView.setTextColor(getResources().getColor(R.color.right_green));
 
             disableKeyboard();
             animateAppear(tryAgainButton);
@@ -253,10 +252,8 @@ public class MainActivity extends AppCompatActivity {
             tryAgainButton.setAlpha(0f);
             showTryAgainButton();
 
-            EndTextView.setText("Sorry, you ran out of guesses.");
-            EndTextView.setTextColor(getResources().getColor(R.color.wrong_red));
+            EndTextView.setText("You ran out of guesses");
             EndWordTextView.setText("The answer was: " + secretWord);
-            EndWordTextView.setTextColor(getResources().getColor(R.color.wrong_red));
 
             animateAppear(tryAgainButton);
             animateAppear(EndTextView);
