@@ -1,11 +1,14 @@
 package com.example.vesanje;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,7 +20,7 @@ import java.util.Random;
 public class TwoPlayerGameActivity extends AppCompatActivity {
 
     private EditText editTextWord, editTextCategory;
-    private ImageView backImageView, randBtn, movingImageView;
+    private ImageView backImageView, randBtn, hangmanImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         editTextCategory = findViewById(R.id.editTextCategory);
         backImageView = findViewById(R.id.backImageView);
         randBtn = findViewById(R.id.randBtn);
-        movingImageView = findViewById(R.id.hangmanImageView);
+        hangmanImageView = findViewById(R.id.hangmanImageView);
 
         randBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,16 +89,17 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
     }
 
     private void moveImage() {
-        float startY = movingImageView.getTranslationY();
+        float startY = hangmanImageView.getTranslationY();
         float endY = startY - 60;
 
-        ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(movingImageView, "translationY", startY, endY);
+        ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(hangmanImageView, "translationY", startY, endY);
         moveUpAnimator.setDuration(50);
 
-        ObjectAnimator moveDownAnimator = ObjectAnimator.ofFloat(movingImageView, "translationY", endY, startY);
+        ObjectAnimator moveDownAnimator = ObjectAnimator.ofFloat(hangmanImageView, "translationY", endY, startY);
         moveDownAnimator.setDuration(150);
 
         AnimatorSet animatorSet = new AnimatorSet();
+
         animatorSet.playSequentially(moveUpAnimator, moveDownAnimator);
 
         animatorSet.addListener(new Animator.AnimatorListener() {
@@ -120,7 +124,6 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
             }
         });
 
-        // Start the animation
         animatorSet.start();
     }
 }
