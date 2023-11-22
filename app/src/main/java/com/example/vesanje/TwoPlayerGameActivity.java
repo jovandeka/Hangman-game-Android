@@ -83,7 +83,7 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
 
     private void moveImage() {
         float startY = movingImageView.getTranslationY();
-        float endY = startY - 80;
+        float endY = startY - 60;
 
         ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(movingImageView, "translationY", startY, endY);
         moveUpAnimator.setDuration(50);

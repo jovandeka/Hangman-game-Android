@@ -29,24 +29,24 @@ public class MainActivity extends AppCompatActivity {
     private int remainingGuesses = 6;
     private List<TextView> letterTextViews;
 
-    Button tryAgainButton;
+    private Button tryAgainButton;
     private TextView EndTextView;
     private TextView EndWordTextView;
-    private TextView guessesTextView;
     private TextView categoryTextView;
     private GridLayout keyboardGrid;
     private ImageView backImageView;
     private LinearLayout lettersLinearLayout;
+    private ImageView drawHangman;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        drawHangman = findViewById(R.id.drawHangmanImageView);
         tryAgainButton = findViewById(R.id.playAgainButton);
         EndTextView = findViewById(R.id.EndTextView);
         EndWordTextView = findViewById(R.id.EndWordTextView);
-        guessesTextView = findViewById(R.id.guessesTextView);
         categoryTextView = findViewById(R.id.categoryTextView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
         backImageView = findViewById(R.id.backImageView);
@@ -378,68 +378,30 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     private void displayHangman(int incorrectGuesses) {
-        StringBuilder hangmanBuilder = new StringBuilder();
 
         switch (incorrectGuesses) {
             case 6:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_6_construction);
                 break;
             case 5:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||          O    \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_5);
                 break;
             case 4:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||          O    \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_4);
                 break;
             case 3:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||          O    \n");
-                hangmanBuilder.append(" ||         /|    \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_3);
                 break;
             case 2:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||          O    \n");
-                hangmanBuilder.append(" ||         /|\\  \n");
-                hangmanBuilder.append(" ||               \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_2);
                 break;
             case 1:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||          O    \n");
-                hangmanBuilder.append(" ||         /|\\  \n");
-                hangmanBuilder.append(" ||         /     \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_1);
                 break;
             case 0:
-                hangmanBuilder.append(" +------+         \n");
-                hangmanBuilder.append(" ||           |   \n");
-                hangmanBuilder.append(" ||          O    \n");
-                hangmanBuilder.append(" ||         /|\\  \n");
-                hangmanBuilder.append(" ||         / \\  \n");
-                hangmanBuilder.append(" ||_____________  \n");
+                drawHangman.setImageResource(R.drawable.stick_hangman_0);
                 break;
         }
-
-        guessesTextView.setText(hangmanBuilder.toString());
     }
 
 }
