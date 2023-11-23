@@ -36,28 +36,42 @@
         <item>Lime</item>
         <item>Kiwifruit</item>
         <item>Nectarine</item>
-        <item>Passionfruit</item>
+        <item>Passion Fruit</item>
         <item>Papaya</item>
         <item>Persimmon</item>
         <item>Tangerine</item>
         <item>Apricot</item>
-        <item>Dragonfruit</item>
+        <item>Dragon Fruit</item>
+        <item>Honeydew</item>
+        <item>Persimmon</item>
+        <item>Lychee</item>
+        <item>Jackfruit</item>
+
     </string-array>
 
     <string-array name="animal">
         <item>Dog</item>
         <item>Cat</item>
+        <item>Bear</item>
         <item>Elephant</item>
         <item>Giraffe</item>
+        <item>Gorilla</item>
         <item>Lion</item>
         <item>Tiger</item>
         <item>Zebra</item>
         <item>Monkey</item>
         <item>Kangaroo</item>
+        <item>Chicken</item>
+        <item>Duck</item>
+        <item>Goose</item>
+        <item>Turkey</item>
+        <item>Whale</item>
+        <item>Shark</item>
+        <item>Dolphin</item>
         <item>Koala</item>
         <item>Panda</item>
         <item>Cheetah</item>
-        <item>Rhinoceros</item>
+        <item>Rhino</item>
         <item>Hippopotamus</item>
         <item>Crocodile</item>
         <item>Alligator</item>
@@ -71,6 +85,8 @@
         <item>Buffalo</item>
         <item>Chameleon</item>
         <item>Chimpanzee</item>
+        <item>Wolf</item>
+        <item>Fox</item>
         <item>Jaguar</item>
         <item>Lemur</item>
         <item>Orangutan</item>
@@ -79,7 +95,18 @@
         <item>Platypus</item>
         <item>Porcupine</item>
         <item>Quokka</item>
-        <item>Reindeer</item>
+        <item>Rat</item>
+        <item>Pig</item>
+        <item>Sheep</item>
+        <item>Goat</item>
+        <item>Guinea Pig</item>
+        <item>Horse</item>
+        <item>Cow</item>
+        <item>Hamster</item>
+        <item>Rabbit</item>
+        <item>Squirrel</item>
+        <item>Mouse</item>
+        <item>Deer</item>
         <item>Salamander</item>
         <item>Sloth</item>
         <item>Tarantula</item>
@@ -106,8 +133,10 @@
         <item>White</item>
         <item>Gray</item>
         <item>Gold</item>
+        <item>Bronze</item>
         <item>Silver</item>
         <item>Indigo</item>
+        <item>Mint</item>
         <item>Violet</item>
         <item>Cyan</item>
         <item>Magenta</item>
@@ -142,13 +171,23 @@
         <item>Guitar</item>
         <item>Piano</item>
         <item>Violin</item>
+        <item>Viola</item>
         <item>Trumpet</item>
         <item>Drums</item>
         <item>Saxophone</item>
+        <item>Piccolo</item>
+        <item>English Horn</item>
+        <item>Contrabassoon</item>
         <item>Flute</item>
         <item>Clarinet</item>
         <item>Trombone</item>
+        <item>French Horn</item>
+        <item>Tuba</item>
+        <item>Euphonium</item>
         <item>Ukulele</item>
+        <item>Balalaika</item>
+        <item>Double Bass</item>
+        <item>Bass Guitar</item>
         <item>Cello</item>
         <item>Bassoon</item>
         <item>Harmonica</item>
@@ -159,7 +198,9 @@
         <item>Oboe</item>
         <item>Banjo</item>
         <item>Mandolin</item>
+        <item>Harpsichord</item>
         <item>Organ</item>
+        <item>Flute</item>
         <item>Didgeridoo</item>
         <item>Steel Drum</item>
         <item>Bongos</item>
@@ -168,6 +209,9 @@
         <item>Sitar</item>
         <item>Keyboard</item>
         <item>Marimba</item>
+        <item>Vibraphone</item>
+        <item>Tambourine</item>
+        <item>Triangle</item>
         <item>Accordion</item>
         <item>Synthesizer</item>
         <item>Conga</item>
@@ -175,6 +219,7 @@
 
     <string-array name="sport">
         <item>Football</item>
+        <item>American Football</item>
         <item>Soccer</item>
         <item>Basketball</item>
         <item>Tennis</item>
@@ -183,8 +228,14 @@
         <item>Cricket</item>
         <item>Golf</item>
         <item>Rugby</item>
+        <item>Ice Hockey</item>
+        <item>Field Hockey</item>
         <item>Hockey</item>
         <item>Swimming</item>
+        <item>Squash</item>
+        <item>Racquetball</item>
+        <item>Running</item>
+        <item>Jumping</item>
         <item>Track and Field</item>
         <item>Boxing</item>
         <item>Table Tennis</item>
@@ -192,8 +243,22 @@
         <item>Skiing</item>
         <item>Snowboarding</item>
         <item>Surfing</item>
+        <item>Rock Climbing</item>
+        <item>Mountain Biking</item>
+        <item>Windsurfing</item>
+        <item>Skateboarding</item>
         <item>Cycling</item>
+        <item>Skydiving</item>
+        <item>Bungee Jumping</item>
+        <item>NASCAR</item>
+        <item>Motorcycle Racing</item>
+        <item>Rally Racing</item>
+        <item>Formula Racing</item>
+        <item>Paragliding</item>
         <item>Karate</item>
+        <item>Judo</item>
+        <item>Taekwondo</item>
+        <item>MMA</item>
         <item>Wrestling</item>
         <item>Gymnastics</item>
         <item>Ice Skating</item>
@@ -201,13 +266,23 @@
         <item>Sailing</item>
         <item>Softball</item>
         <item>Archery</item>
+        <item>Shooting</item>
+        <item>Darts</item>
+        <item>CrossFit</item>
+        <item>Bodybuilding</item>
+        <item>Powerlifting</item>
+        <item>Horse Racing</item>
         <item>Climbing</item>
         <item>Fencing</item>
+        <item>Diving</item>
+        <item>Synchronized Swimming</item>
         <item>Handball</item>
         <item>Lacrosse</item>
         <item>Ultimate Frisbee</item>
         <item>Water Polo</item>
+        <item>Polo</item>
         <item>Canoeing</item>
+        <item>Kayaking</item>
         <item>Equestrian</item>
         <item>Triathlon</item>
         <item>Marathon</item>
@@ -243,7 +318,6 @@
         <item>Wolverhampton Wanderers</item>
         <!-- serbia -->
         <item>Partizan</item>
-        <item>crvena zvezda</item>
         <item>Voždovac</item>
         <item>Čukarički</item>
         <item>Radnički Niš</item>
@@ -258,6 +332,110 @@
         <item>Rad Beograd</item>
         <item>Bačka</item>
         <item>Metalac</item>
+        <!-- spain -->
+        <item>Real Madrid</item>
+        <item>Barcelona</item>
+        <item>Atletico Madrid</item>
+        <item>Sevilla</item>
+        <item>Real Sociedad</item>
+        <item>Villarreal</item>
+        <item>Real Betis</item>
+        <item>Athletic Bilbao</item>
+        <item>Levante</item>
+        <item>Valencia</item>
+        <item>Celta Vigo</item>
+        <item>Granada</item>
+        <item>Eibar</item>
+        <item>Alaves</item>
+        <item>Real Valladolid</item>
+        <item>Osasuna</item>
+        <item>Elche</item>
+        <item>Getafe</item>
+        <item>Huesca</item>
+        <!-- france -->
+        <item>PSG</item>
+        <item>Olympique de Marseille</item>
+        <item>Olympique Lyonnais</item>
+        <item>Monaco</item>
+        <item>LOSC Lille</item>
+        <item>Stade Rennais</item>
+        <item>Nice</item>
+        <item>Montpellier</item>
+        <item>Strasbourg Alsace</item>
+        <item>Angers</item>
+        <item>Girondins de Bordeaux</item>
+        <item>Nantes</item>
+        <item>Dijon</item>
+        <item>Stade Brestois</item>
+        <item>Metz</item>
+        <item>Lens</item>
+        <item>Clermont</item>
+        <!-- germany -->
+        <item>Bayern Munich</item>
+        <item>Borussia Dortmund</item>
+        <item>Leipzig</item>
+        <item>Bayer Leverkusen</item>
+        <item>Borussia Monchengladbach</item>
+        <item>Wolfsburg</item>
+        <item>Eintracht Frankfurt</item>
+        <item>Augsburg</item>
+        <item>Hertha</item>
+        <item>Freiburg</item>
+        <item>Union Berlin</item>
+        <item>Arminia Bielefeld</item>
+        <item>Stuttgart</item>
+        <item>Mainz</item>
+        <item>Schalke</item>
+        <!-- italy -->
+        <item>Milan</item>
+        <item>Roma</item>
+        <item>Inter Milan</item>
+        <item>Juventus</item>
+        <item>Lazio</item>
+        <item>Fiorentina</item>
+        <item>Atalanta</item>
+        <item>Napoli</item>
+        <item>Sampdoria</item>
+        <item>Sassuolo</item>
+        <item>Genoa</item>
+        <item>Verona</item>
+        <item>Bologna</item>
+        <item>Udinese</item>
+        <item>Chievo Verona</item>
+        <item>Parma</item>
+        <item>Brescia</item>
+        <item>SPAL</item>
+        <item>Empoli</item>
+        <!-- russia -->
+        <item>Zenit Saint Petersburg</item>
+        <item>CSKA Moscow</item>
+        <item>Spartak Moscow</item>
+        <item>Lokomotiv Moscow</item>
+        <item>Krasnodar</item>
+        <item>Dynamo Moscow</item>
+        <item>Rostov</item>
+        <item>Ufa</item>
+        <item>Arsenal Tula</item>
+        <item>Akhmat Grozny</item>
+        <item>Ural Yekaterinburg</item>
+        <item>Tambov</item>
+        <item>Orenburg</item>
+        <item>Sochi</item>
+        <!-- belgium -->
+        <item>Club Brugge</item>
+        <item>Anderlecht</item>
+        <item>Gent</item>
+        <item>Standard Liege</item>
+        <item>Antwerp</item>
+        <item>Genk</item>
+        <item>Zulte Waregem</item>
+        <item>Oostende</item>
+        <item>Charleroi</item>
+        <item>Beerschot</item>
+        <item>Leuven</item>
+        <item>Mechelen</item>
+        <item>Cercle Brugge</item>
+        <item>Truiden</item>
     </string-array>
 
     <string-array name="country">
@@ -458,13 +636,42 @@
         <item>Pizza</item>
         <item>Pasta</item>
         <item>Sushi</item>
+        <item>Corn</item>
+        <item>Hamburger</item>
+        <item>Spaghetti Bolognese</item>
         <item>Burger</item>
         <item>Ice Cream</item>
+        <item>Scrambled Eggs</item>
+        <item>Boiled Eggs</item>
+        <item>Muffins</item>
+        <item>Greek Salad</item>
+        <item>Omelette</item>
+        <item>Curry</item>
         <item>Chocolate</item>
         <item>Pancake</item>
         <item>Sandwich</item>
+        <item>Creme Brulee</item>
+        <item>Garlic Bread</item>
         <item>Tacos</item>
+        <item>Croissant</item>
         <item>Steak</item>
+        <item>Baguette</item>
+        <item>Caesar Salad</item>
+        <item>Pancakes</item>
+        <item>Risotto</item>
+        <item>Tiramisu</item>
+        <item>Shrimp Scampi</item>
+        <item>Ramen</item>
+        <item>Fried Chicken</item>
+        <item>Lobster</item>
+        <item>Goulash</item>
+        <item>Lasagna</item>
+        <item>Beef</item>
+        <item>Moussaka</item>
+        <item>Chicken Noodle Soup</item>
+        <item>Kimchi Fried Rice</item>
+        <item>Spanakopita</item>
+        <item>Guacamole</item>
         <item>Chicken Wings</item>
         <item>Hot Dog</item>
         <item>Soup</item>
@@ -478,7 +685,9 @@
         <item>Spaghetti</item>
         <item>Burrito</item>
         <item>Waffle</item>
+        <item>Biryani</item>
         <item>Nachos</item>
+        <item>Ratatouille</item>
         <item>Cookie</item>
         <item>Muffin</item>
         <item>Brownie</item>
@@ -493,9 +702,11 @@
         <item>Cucumber</item>
         <item>Onion</item>
         <item>Garlic</item>
+        <item>Ginger</item>
         <item>Pepper</item>
         <item>Radish</item>
         <item>Cabbage</item>
+        <item>Chili Pepper</item>
         <item>Cauliflower</item>
         <item>Zucchini</item>
         <item>Eggplant</item>
@@ -503,13 +714,17 @@
         <item>Mushroom</item>
         <item>Asparagus</item>
         <item>Beetroot</item>
+        <item>Bell Pepper</item>
         <item>Celery</item>
+        <item>Cherry Tomato</item>
         <item>Leek</item>
+        <item>Pumpkin</item>
         <item>Potato</item>
         <item>Sweet Potato</item>
         <item>Brussels Sprouts</item>
         <item>Peas</item>
         <item>Green Beans</item>
+        <item>Squash</item>
         <item>Butternut Squash</item>
         <item>Radish</item>
         <item>Turnip</item>
@@ -520,6 +735,7 @@
         <item>Beet Greens</item>
         <item>Collard Greens</item>
         <item>Mustard Greens</item>
+        <item>Lettuce</item>
         <item>Romaine Lettuce</item>
         <item>Iceberg Lettuce</item>
         <item>Endive</item>
@@ -534,126 +750,245 @@
     </string-array>
 
     <string-array name="movie">
-        <item>The Shawshank Redemption</item>
         <item>The Godfather</item>
         <item>The Dark Knight</item>
-        <item>Pulp Fiction</item>
         <item>Schindlers List</item>
-        <item>The Lord of the Rings</item>
-        <item>Forrest Gump</item>
+        <item>Pulp Fiction</item>
         <item>The Matrix</item>
         <item>Citizen Kane</item>
         <item>Casablanca</item>
         <item>Star Wars</item>
-        <item>Goodfellas</item>
+        <item>The Lord of the Rings</item>
+        <item>Inception</item>
+        <item>The Shawshank Redemption</item>
         <item>The Silence of the Lambs</item>
-        <item>Saving Private Ryan</item>
+        <item>Braveheart</item>
+        <item>The Graduate</item>
+        <item>The Sound of Music</item>
+        <item>Titanic</item>
+        <item>Avatar</item>
+        <item>The Wizard of Oz</item>
+        <item>Back to the Future</item>
+        <item>The Terminator</item>
+        <item>Jaws</item>
+        <item>The Exorcist</item>
+        <item>The Shining</item>
+        <item>Gone with the Wind</item>
+        <item>Lawrence of Arabia</item>
+        <item>Goodfellas</item>
+        <item>Casino</item>
+        <item>Fight Club</item>
+        <item>The Great Gatsby</item>
         <item>The Pianist</item>
-        <item>The Departed</item>
-        <item>Gladiator</item>
+        <item>The Usual Suspects</item>
+        <item>Reservoir Dogs</item>
+        <item>One Flew Over the Cuckoos Nest</item>
+        <item>Glory</item>
+        <item>Apocalypse Now</item>
+        <item>The Breakfast Club</item>
+        <item>The Sixth Sense</item>
+        <item>Dead Poets Society</item>
+        <item>The Truman Show</item>
+        <item>Forrest Gump</item>
+        <item>Indiana Jones</item>
+        <item>The Lion King</item>
+        <item>Saving Private Ryan</item>
         <item>The Green Mile</item>
+        <item>The Departed</item>
+        <item>The Revenant</item>
+        <item>Gladiator</item>
+        <item>The Social Network</item>
+        <item>The Wolf of Wall Street</item>
+        <item>La La Land</item>
+        <item>The Shape of Water</item>
+        <item>Black Panther</item>
+        <item>The Grand Budapest Hotel</item>
+        <item>Mad Max</item>
+        <item>Gravity</item>
+        <item>Interstellar</item>
+        <item>The Martian</item>
+        <item>Avatar</item>
+        <item>The Avengers</item>
+        <item>Jurassic Park</item>
+        <item>Harry Potter</item>
+        <item>The Dark Knight Rises</item>
+        <item>Toy Story</item>
+        <item>Frozen</item>
+        <item>Beauty and the Beast</item>
+        <item>The Incredibles</item>
+        <item>Spider Man</item>
+        <item>Coco</item>
+        <item>The Jungle Book</item>
+        <item>The Lion King</item>
+        <item>Aladdin</item>
+        <item>Finding Nemo</item>
+        <item>Up</item>
+        <item>Wall E</item>
+        <item>Zootopia</item>
+        <item>Inside Out</item>
+        <item>To Kill a Mockingbird</item>
+        <item>The Great Gatsby</item>
     </string-array>
 
     <string-array name="brand">
         <item>Apple</item>
-        <item>Google</item>
         <item>Microsoft</item>
-        <item>Amazon</item>
-        <item>Facebook</item>
-        <item>Samsung</item>
         <item>IBM</item>
-        <item>Coca Cola</item>
-        <item>Nike</item>
-        <item>McDonalds</item>
-        <item>Toyota</item>
-        <item>Disney</item>
-        <item>Mercedes Benz</item>
-        <item>BMW</item>
-        <item>Intel</item>
-        <item>Adobe</item>
-        <item>Sony</item>
-        <item>HP</item>
         <item>Dell</item>
-        <item>General Electric</item>
-        <item>Visa</item>
-        <item>MasterCard</item>
-        <item>PayPal</item>
-        <item>Netflix</item>
+        <item>HP</item>
+        <item>Cisco</item>
+        <item>ASUS</item>
+        <item>Panasonic</item>
+        <item>Xiaomi</item>
+        <item>Toyota</item>
+        <item>Volkswagen</item>
+        <item>Ford</item>
+        <item>Chevrolet</item>
+        <item>Honda</item>
+        <item>Nissan</item>
+        <item>Hyundai</item>
+        <item>Mercedes Benz</item>
+        <item>Audi</item>
+        <item>Kia</item>
+        <item>Volvo</item>
         <item>Tesla</item>
-        <item>Pepsi</item>
-        <item>Colgate</item>
-        <item>Adidas</item>
-        <item>Lego</item>
-        <item>Canon</item>
-        <item>Louis Vuitton</item>
-        <item>Chanel</item>
-        <item>Gucci</item>
-        <item>Zara</item>
-        <item>Prada</item>
-        <item>Rolex</item>
-        <item>Nintendo</item>
-        <item>PlayStation</item>
-        <item>Xbox</item>
-        <item>Starbucks</item>
-        <item>Nike</item>
-        <item>Uber</item>
-        <item>Airbnb</item>
-        <item>Spotify</item>
-        <item>WhatsApp</item>
-        <item>Twitter</item>
-        <item>Instagram</item>
-        <item>LinkedIn</item>
-        <item>YouTube</item>
-        <item>Snapchat</item>
-        <item>Walmart</item>
+        <item>Subaru</item>
+        <item>Mazda</item>
+        <item>Jeep</item>
+        <item>Land Rover</item>
+        <item>Lexus</item>
+        <item>Peugeot</item>
+        <item>Renault</item>
+        <item>Coca Cola</item>
+        <item>TikTok</item>
         <item>Target</item>
+        <item>Vans</item>
+        <item>Converse</item>
+        <item>Lego</item>
+        <item>NVIDIA</item>
+        <item>Google</item>
+        <item>Amazon</item>
+        <item>Samsung</item>
+        <item>McDonalds</item>
+        <item>Facebook</item>
+        <item>Disney</item>
+        <item>BMW</item>
+        <item>Nike</item>
+        <item>Adidas</item>
+        <item>General Electric</item>
+        <item>Intel</item>
+        <item>Sony</item>
+        <item>Nestle</item>
+        <item>Walmart</item>
+        <item>General Motors</item>
+        <item>Verizon</item>
+        <item>Netflix</item>
+        <item>Pepsi</item>
+        <item>Louis Vuitton</item>
+        <item>Zara</item>
+        <item>Canon</item>
+        <item>Boeing</item>
+        <item>Rolls Royce</item>
+        <item>Siemens</item>
+        <item>Lenovo</item>
+        <item>Adobe</item>
+        <item>Oracle</item>
+        <item>Yahoo</item>
+        <item>Spotify</item>
+        <item>Harley Davidson</item>
+        <item>Chanel</item>
     </string-array>
 
     <string-array name="band">
-        <item>The Beatles</item>
-        <item>Queen</item>
-        <item>Rolling Stones</item>
-        <item>Pink Floyd</item>
-        <item>Nirvana</item>
-        <item>Led Zeppelin</item>
-        <item>The Who</item>
-        <item>AC DC</item>
-        <item>Metallica</item>
-        <item>Red Hot Chili Peppers</item>
-        <item>Coldplay</item>
-        <item>Green Day</item>
-        <item>Linkin Park</item>
-        <item>Oasis</item>
-        <item>Radiohead</item>
-        <item>Foo Fighters</item>
-        <item>Guns N Roses</item>
-        <item>The Eagles</item>
+        <item>Sara Džesika Panker</item>
         <item>Bon Jovi</item>
-        <item>Aerosmith</item>
-        <item>Fleetwood Mac</item>
         <item>The Police</item>
         <item>ABBA</item>
-        <item>Black Sabbath</item>
         <item>Deep Purple</item>
-        <item>Blur</item>
-        <item>The Beach Boys</item>
-        <item>The Cure</item>
         <item>Rush</item>
-        <item>The Doors</item>
-        <item>Genesis</item>
-        <item>The Clash</item>
-        <item>The Velvet Underground</item>
-        <item>ZZ Top</item>
-        <item>Def Leppard</item>
-        <item>Journey</item>
         <item>The Ramones</item>
-        <item>Van Halen</item>
+        <item>Sex Pistols</item>
         <item>The Smiths</item>
         <item>Yes</item>
-        <item>The Supremes</item>
-        <item>Backstreet Boys</item>
         <item>NSYNC</item>
+        <item>The Beatles</item>
+        <item>The Rolling Stones</item>
+        <item>Queen</item>
+        <item>Nirvana</item>
+        <item>AC DC</item>
+        <item>Led Zeppelin</item>
+        <item>Pink Floyd</item>
+        <item>The Who</item>
+        <item>Radiohead</item>
+        <item>Coldplay</item>
+        <item>Green Day</item>
+        <item>Metallica</item>
+        <item>The Eagles</item>
+        <item>Red Hot Chili Peppers</item>
+        <item>Foo Fighters</item>
+        <item>Linkin Park</item>
+        <item>The Doors</item>
+        <item>Fleetwood Mac</item>
+        <item>Guns N Roses</item>
+        <item>Michael Jackson</item>
+        <item>The Bee Gees</item>
+        <item>Backstreet Boys</item>
+        <item>One Direction</item>
         <item>The Spice Girls</item>
+        <item>Black Sabbath</item>
+        <item>Dire Straits</item>
+        <item>Blur</item>
+        <item>Oasis</item>
+        <item>The Police</item>
+        <item>The Clash</item>
+        <item>The Beach Boys</item>
+        <item>Genesis</item>
+        <item>The Cure</item>
+        <item>The Kinks</item>
+        <item>The Temptations</item>
+        <item>The Supremes</item>
+        <item>The Four Seasons</item>
+        <item>Elvis Presley</item>
+        <item>Bob Dylan</item>
+        <item>The Byrds</item>
+        <item>The Jimi Hendrix Experience</item>
+        <item>The Everly Brothers</item>
+        <item>The Righteous Brothers</item>
+        <item>The Yardbirds</item>
+        <item>Jefferson Airplane</item>
+        <item>The Velvet Underground</item>
+        <item>The Monkees</item>
+        <item>The Grateful Dead</item>
+        <item>The Band</item>
+        <item>Creedence Clearwater Revival</item>
+        <item>Lynyrd Skynyrd</item>
+        <item>ZZ Top</item>
+        <item>The Allman Brothers Band</item>
+        <item>The Doobie Brothers</item>
+        <item>Chicago</item>
+        <item>Kiss</item>
+        <item>Van Halen</item>
+        <item>Aerosmith</item>
+        <item>Foreigner</item>
+        <item>Journey</item>
+        <item>Def Leppard</item>
+        <item>Pearl Jam</item>
+        <item>Soundgarden</item>
+        <item>Alice in Chains</item>
+        <item>The Offspring</item>
+        <item>NOFX</item>
+        <item>The Exploited</item>
+        <item>Hooverphonic</item>
+        <item>Misfits</item>
+        <item>Nickelback</item>
+        <item>Motorhead</item>
+        <item>Dropkick Murphys</item>
+        <item>The White Stripes</item>
+        <item>The Black Keys</item>
+        <item>The Stooges</item>
+        <item>Iggy Pop</item>
+        <item>Blondie</item>
+
     </string-array>
 
 </resources>

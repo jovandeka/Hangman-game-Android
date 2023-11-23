@@ -1,5 +1,6 @@
 package com.example.vesanje;
 
+import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private StringBuilder guessedWord;
     private int remainingGuesses = 6;
     private List<TextView> letterTextViews;
+    private AnimatorSet animatorSetWin;
 
     private Button tryAgainButton;
     private TextView EndTextView;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView backImageView;
     private LinearLayout lettersLinearLayout;
     private ImageView drawHangman;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -336,8 +339,20 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent2 = new Intent(MainActivity.this, TwoPlayerGameActivity.class);
                     startActivity(intent2);
                 }else if(intent.hasExtra("categoryRand")){
+                    try{
+                        animatorSetWin.cancel();
+                        EndTextView.setTranslationY(0f);
+                        EndTextView.setRotation(0f);
+                    }catch (Exception e){e.printStackTrace();}
+
                     resetGameRand();
                 }else{
+                    try{
+                        animatorSetWin.cancel();
+                        EndTextView.setTranslationY(0f);
+                        EndTextView.setRotation(0f);
+                    }catch (Exception e){e.printStackTrace();}
+
                     resetGame();
                 }
 
@@ -377,19 +392,19 @@ public class MainActivity extends AppCompatActivity {
         colorAnimator.setRepeatMode(ValueAnimator.REVERSE);
         colorAnimator.setRepeatCount(ValueAnimator.INFINITE);
 
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(translationY, rotation, colorAnimator);
+        animatorSetWin = new AnimatorSet();
+        animatorSetWin.playTogether(translationY, rotation, colorAnimator);
 
-        animatorSet.setDuration(1000);
+        animatorSetWin.setDuration(1000);
 
-        animatorSet.start();
+        animatorSetWin.start();
     }
 
     private void endLostLoopingAnimation() {
         int startColor = getResources().getColor(R.color.pale_yellow);
         int endColor = getResources().getColor(R.color.wrong_red);
 
-        ValueAnimator colorAnimator = ObjectAnimator.ofObject(
+        ValueAnimator colorAnimatorLost = ObjectAnimator.ofObject(
                 EndTextView,
                 "textColor",
                 new ArgbEvaluator(),
@@ -397,7 +412,7 @@ public class MainActivity extends AppCompatActivity {
                 endColor
         );
 
-        ValueAnimator colorAnimatorWord = ObjectAnimator.ofObject(
+        ValueAnimator colorAnimatorWordLost = ObjectAnimator.ofObject(
                 EndWordTextView,
                 "textColor",
                 new ArgbEvaluator(),
@@ -405,17 +420,17 @@ public class MainActivity extends AppCompatActivity {
                 endColor
         );
 
-        colorAnimator.setDuration(700);
-        colorAnimatorWord.setDuration(700);
+        colorAnimatorLost.setDuration(700);
+        colorAnimatorWordLost.setDuration(700);
 
-        colorAnimator.setRepeatMode(ValueAnimator.REVERSE);
-        colorAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        colorAnimatorLost.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnimatorLost.setRepeatCount(ValueAnimator.INFINITE);
 
-        colorAnimatorWord.setRepeatMode(ValueAnimator.REVERSE);
-        colorAnimatorWord.setRepeatCount(ValueAnimator.INFINITE);
+        colorAnimatorWordLost.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnimatorWordLost.setRepeatCount(ValueAnimator.INFINITE);
 
-        colorAnimator.start();
-        colorAnimatorWord.start();
+        colorAnimatorLost.start();
+        colorAnimatorWordLost.start();
     }
 
     private void resetGame() {

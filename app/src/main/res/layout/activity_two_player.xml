@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/backImageView"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:elevation="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/undo" />
+        app:srcCompat="@drawable/undo2" />
 
     <EditText
         android:id="@+id/editTextWord"
@@ -64,7 +64,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonStartGame"
         style="@style/CategoryButton"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/audiowide"
@@ -72,7 +72,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/randBtn"
-        app:layout_constraintStart_toStartOf="@+id/editTextCategory"
+        app:layout_constraintStart_toEndOf="@+id/clearBtn"
         app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
 
     <ImageView
@@ -93,4 +93,13 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextCategory"
         app:layout_constraintTop_toTopOf="@+id/buttonStartGame"
         app:srcCompat="@drawable/random_dice" />
+
+    <ImageView
+        android:id="@+id/clearBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonStartGame"
+        app:layout_constraintStart_toStartOf="@+id/editTextCategory"
+        app:layout_constraintTop_toTopOf="@+id/buttonStartGame"
+        app:srcCompat="@drawable/clear" />
 </androidx.constraintlayout.widget.ConstraintLayout>

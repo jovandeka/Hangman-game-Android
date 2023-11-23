@@ -20,7 +20,7 @@ import java.util.Random;
 public class TwoPlayerGameActivity extends AppCompatActivity {
 
     private EditText editTextWord, editTextCategory;
-    private ImageView backImageView, randBtn, hangmanImageView;
+    private ImageView backImageView, randBtn, hangmanImageView, clearBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         editTextCategory = findViewById(R.id.editTextCategory);
         backImageView = findViewById(R.id.backImageView);
         randBtn = findViewById(R.id.randBtn);
+        clearBtn = findViewById(R.id.clearBtn);
         hangmanImageView = findViewById(R.id.hangmanImageView);
 
         randBtn.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,14 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
 
                 randBtn.setEnabled(false);
                 moveImage();
+            }
+        });
+
+        clearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editTextWord.setText("");
+                editTextCategory.setText("");
             }
         });
 
