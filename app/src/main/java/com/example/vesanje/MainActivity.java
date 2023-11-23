@@ -1,5 +1,7 @@
 package com.example.vesanje;
 
+import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
@@ -267,6 +269,8 @@ public class MainActivity extends AppCompatActivity {
 
             EndTextView.setText("Congratulations!");
 
+            EndWinLoopingAnimation();
+
             disableKeyboard();
             animateAppear(tryAgainButton);
             animateAppear(EndTextView);
@@ -281,8 +285,10 @@ public class MainActivity extends AppCompatActivity {
             tryAgainButton.setBackgroundResource(R.drawable.play_again_red);
             updateWrongBackgrounds();
 
-            EndTextView.setText("You ran out of guesses");
-            EndWordTextView.setText("The answer was: " + secretWord);
+            EndTextView.setText("You ran out of guesses!");
+            EndWordTextView.setText("Answer: " + secretWord);
+
+            endLostLoopingAnimation();
 
             animateAppear(tryAgainButton);
             animateAppear(EndTextView);
@@ -344,6 +350,72 @@ public class MainActivity extends AppCompatActivity {
         fadeIn.setDuration(800);
 
         fadeIn.start();
+    }
+
+    private void EndWinLoopingAnimation() {
+        ObjectAnimator translationY = ObjectAnimator.ofFloat(EndTextView, "translationY", 0f, -40f, 0f);
+        translationY.setRepeatMode(ObjectAnimator.REVERSE);
+        translationY.setRepeatCount(ObjectAnimator.INFINITE);
+
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(EndTextView, "rotation", 0f, 3f, 0f, -3f, 0f);
+        rotation.setRepeatMode(ObjectAnimator.REVERSE);
+        rotation.setRepeatCount(ObjectAnimator.INFINITE);
+
+        int startColor = getResources().getColor(R.color.pale_yellow);
+        int endColor = getResources().getColor(R.color.green);
+
+        ValueAnimator colorAnimator = ObjectAnimator.ofObject(
+                EndTextView,
+                "textColor",
+                new ArgbEvaluator(),
+                startColor,
+                endColor
+        );
+
+        colorAnimator.setDuration(750);
+
+        colorAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnimator.setRepeatCount(ValueAnimator.INFINITE);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(translationY, rotation, colorAnimator);
+
+        animatorSet.setDuration(1000);
+
+        animatorSet.start();
+    }
+
+    private void endLostLoopingAnimation() {
+        int startColor = getResources().getColor(R.color.pale_yellow);
+        int endColor = getResources().getColor(R.color.wrong_red);
+
+        ValueAnimator colorAnimator = ObjectAnimator.ofObject(
+                EndTextView,
+                "textColor",
+                new ArgbEvaluator(),
+                startColor,
+                endColor
+        );
+
+        ValueAnimator colorAnimatorWord = ObjectAnimator.ofObject(
+                EndWordTextView,
+                "textColor",
+                new ArgbEvaluator(),
+                startColor,
+                endColor
+        );
+
+        colorAnimator.setDuration(700);
+        colorAnimatorWord.setDuration(700);
+
+        colorAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnimator.setRepeatCount(ValueAnimator.INFINITE);
+
+        colorAnimatorWord.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnimatorWord.setRepeatCount(ValueAnimator.INFINITE);
+
+        colorAnimator.start();
+        colorAnimatorWord.start();
     }
 
     private void resetGame() {
