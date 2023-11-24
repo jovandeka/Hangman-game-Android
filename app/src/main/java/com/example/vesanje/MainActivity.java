@@ -1,6 +1,5 @@
 package com.example.vesanje;
 
-import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
@@ -9,7 +8,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;

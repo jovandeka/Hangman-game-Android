@@ -3,6 +3,21 @@
     <string name="editTextCategory">Enter the category</string>
     <string name="editTextWord">Enter the word(s)</string>
 
+    <string-array name="categories">
+        <item>fruit</item>
+        <item>animal</item>
+        <item>color</item>
+        <item>instrument</item>
+        <item>sport</item>
+        <item>club</item>
+        <item>country</item>
+        <item>food</item>
+        <item>vegetable</item>
+        <item>movie</item>
+        <item>brand</item>
+        <item>band</item>
+    </string-array>
+
     <string-array name="fruit">
         <item>Apple</item>
         <item>Banana</item>

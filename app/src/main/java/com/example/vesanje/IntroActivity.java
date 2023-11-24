@@ -2,172 +2,56 @@ package com.example.vesanje;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce = false;
-
+    private List<CategoryItem> categoriesList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        categoriesList = new ArrayList<>();
+
+        String[] categoriesNames = getResources().getStringArray(R.array.categories);
+        for(int i = 0; i < categoriesNames.length; i++){
+            String name = categoriesNames[i];
+            int img = getResources().getIdentifier(name, "drawable", getPackageName());
+            int count = countCategory(name);
+
+            CategoryItem category = new CategoryItem(name, img, count);
+
+            categoriesList.add(category);
+        }
+
+        CategoryAdapter adapter = new CategoryAdapter(categoriesList);
+        recyclerView.setAdapter(adapter);
+
         ImageView pvpButton = findViewById(R.id.pvp_button);
         ImageView randomButton = findViewById(R.id.random_button);
 
-        Button guessFruitButton = findViewById(R.id.guessFruitButton);
-        Button guessAnimalButton = findViewById(R.id.guessAnimalButton);
-        Button guessColorsButton = findViewById(R.id.guessColorsButton);
-        Button guessInstrumentButton = findViewById(R.id.guessInstrumentButton);
-        Button guessSportButton = findViewById(R.id.guessSportButton);
-        Button guessClubButton = findViewById(R.id.guessClubButton);
-        Button guessCountryButton = findViewById(R.id.guessCountryButton);
-        Button guessFoodButton = findViewById(R.id.guessFoodButton);
-        Button guessVegetableButton = findViewById(R.id.guessVegetableButton);
-        Button guessMovieButton = findViewById(R.id.guessMovieButton);
-        Button guessBrandButton = findViewById(R.id.guessBrandButton);
-        Button guessBandButton = findViewById(R.id.guessBandButton);
-
-        TextView countFruitTV = findViewById(R.id.countFruitTV);
-        int fruitCount = countCategory("fruit");
-        countFruitTV.setText(""+fruitCount);
-
-        TextView countAnimalTV = findViewById(R.id.countAnimalTV);
-        int animalCount = countCategory("animal");
-        countAnimalTV.setText(""+animalCount);
-
-        TextView countColorTV = findViewById(R.id.countColorTV);
-        int colorCount = countCategory("color");
-        countColorTV.setText(""+colorCount);
-
-        TextView countInstrumentTV = findViewById(R.id.countInstrumentTV);
-        int instrumentCount = countCategory("instrument");
-        countInstrumentTV.setText(""+instrumentCount);
-
-        TextView countSportTV = findViewById(R.id.countSportTV);
-        int sportCount = countCategory("sport");
-        countSportTV.setText(""+sportCount);
-
-        TextView countClubTV = findViewById(R.id.countClubTV);
-        int clubCount = countCategory("club");
-        countClubTV.setText(""+clubCount);
-
-        TextView countCountryTV = findViewById(R.id.countCountryTV);
-        int countryCount = countCategory("country");
-        countCountryTV.setText(""+countryCount);
-
-        TextView countFoodTV = findViewById(R.id.countFoodTV);
-        int foodCount = countCategory("food");
-        countFoodTV.setText(""+foodCount);
-
-        TextView countVegetableTV = findViewById(R.id.countVegetableTV);
-        int vegetableCount = countCategory("vegetable");
-        countVegetableTV.setText(""+vegetableCount);
-
-        TextView countMovieTV = findViewById(R.id.countMovieTV);
-        int movieCount = countCategory("movie");
-        countMovieTV.setText(""+movieCount);
-
-        TextView countBrandTV = findViewById(R.id.countBrandTV);
-        int brandCount = countCategory("brand");
-        countBrandTV.setText(""+brandCount);
-
-        TextView countBandTV = findViewById(R.id.countBandTV);
-        int bandCount = countCategory("band");
-        countBandTV.setText(""+bandCount);
-
-        guessFruitButton.setOnClickListener(new View.OnClickListener() {
+        adapter.setOnItemClickListener(new CategoryAdapter.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                startGame("fruit");
-            }
-        });
-
-        guessAnimalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("animal");
-            }
-        });
-
-        guessColorsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("color");
-            }
-        });
-        guessInstrumentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("instrument");
-            }
-        });
-
-        guessSportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("sport");
-            }
-        });
-
-        guessClubButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("club");
-            }
-        });
-        guessCountryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("country");
-            }
-        });
-
-        guessFoodButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("food");
-            }
-        });
-
-        guessVegetableButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("vegetable");
-            }
-        });
-        guessMovieButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("movie");
-            }
-        });
-
-        guessBrandButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("brand");
-            }
-        });
-
-        guessBandButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startGame("band");
+            public void onItemClick(CategoryItem item) {
+                String categoryName = item.getCategoryName();
+                startGame(categoryName);
             }
         });
 
@@ -221,5 +105,4 @@ public class IntroActivity extends AppCompatActivity {
             return 0;
         }
     }
-
 }
