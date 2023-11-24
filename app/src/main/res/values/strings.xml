@@ -4,6 +4,7 @@
     <string name="editTextWord">Enter the word(s)</string>
 
     <string-array name="categories">
+        <item>person</item>
         <item>fruit</item>
         <item>animal</item>
         <item>color</item>
@@ -16,6 +17,181 @@
         <item>movie</item>
         <item>brand</item>
         <item>band</item>
+    </string-array>
+
+    <string-array name="person">
+        <!-- Scientists -->
+        <item>Albert Einstein</item>
+        <item>Marie Curie</item>
+        <item>Isaac Newton</item>
+        <item>Charles Darwin</item>
+        <item>Stephen Hawking</item>
+        <item>Nikola Tesla</item>
+        <item>Galileo Galilei</item>
+        <item>Alan Turing</item>
+        <item>Thomas Edison</item>
+        <!-- Artists -->
+        <item>Leonardo da Vinci</item>
+        <item>Pablo Picasso</item>
+        <item>Vincent van Gogh</item>
+        <item>Frida Kahlo</item>
+        <item>Andy Warhol</item>
+        <item>Salvador Dali</item>
+        <item>Claude Monet</item>
+        <item>Michelangelo</item>
+        <item>Jackson Pollock</item>
+        <item>Edvard Munch</item>
+        <!-- Musicians -->
+        <item>Michael Jackson</item>
+        <item>Elvis Presley</item>
+        <item>Bob Dylan</item>
+        <item>Madonna</item>
+        <item>David Bowie</item>
+        <item>John Lennon</item>
+        <item>Freddie Mercury</item>
+        <item>Lady Gaga</item>
+        <item>Stevie Wonder</item>
+        <item>Aretha Franklin</item>
+        <item>Jimi Hendrix</item>
+        <item>Frank Sinatra</item>
+        <item>Johnny Cash</item>
+        <item>Eminem</item>
+        <item>Whitney Houston</item>
+        <item>Bob Marley</item>
+        <item>Prince</item>
+        <item>Adele</item>
+        <item>Marvin Gaye</item>
+        <item>Justin Bieber</item>
+        <item>Miles Davis</item>
+        <item>Taylor Swift</item>
+        <item>Cher</item>
+        <item>Frank Zappa</item>
+        <!-- Writers -->
+        <item>William Shakespeare</item>
+        <item>Mark Twain</item>
+        <item>Jane Austen</item>
+        <item>George Orwell</item>
+        <item>Agatha Christie</item>
+        <!-- Leaders -->
+        <item>Mahatma Gandhi</item>
+        <item>Nelson Mandela</item>
+        <item>Winston Churchill</item>
+        <item>Abraham Lincoln</item>
+        <item>Martin Luther King Jr</item>
+        <item>Queen Elizabeth</item>
+        <item>Barack Obama</item>
+        <item>Adolf Hitler</item>
+        <item>Mao Zedong</item>
+        <!-- Philosophers -->
+        <item>Socrates</item>
+        <item>Aristotle</item>
+        <item>Confucius</item>
+        <item>Plato</item>
+        <item>Friedrich Nietzsche</item>
+        <item>Immanuel Kant</item>
+        <!-- Inventors -->
+        <item>Steve Jobs</item>
+        <item>Elon Musk</item>
+        <item>Alexander Graham Bell</item>
+        <item>Ada Lovelace</item>
+        <!-- Actors -->
+        <item>Robert De Niro</item>
+        <item>Meryl Streep</item>
+        <item>Tom Hanks</item>
+        <item>Leonardo DiCaprio</item>
+        <item>Julia Roberts</item>
+        <item>Denzel Washington</item>
+        <item>Cate Blanchett</item>
+        <item>Johnny Depp</item>
+        <item>Angelina Jolie</item>
+        <item>Brad Pitt</item>
+        <item>Morgan Freeman</item>
+        <item>Charlize Theron</item>
+        <item>Jack Nicholson</item>
+        <item>Natalie Portman</item>
+        <item>Anthony Hopkins</item>
+        <item>Kate Winslet</item>
+        <item>Judi Dench</item>
+        <item>Al Pacino</item>
+        <item>Scarlett Johansson</item>
+        <item>Clint Eastwood</item>
+        <item>Matt Damon</item>
+        <item>Emma Stone</item>
+        <item>Christian Bale</item>
+        <item>Nicole Kidman</item>
+        <item>Will Smith</item>
+        <item>Audrey Hepburn</item>
+        <item>Chris Hemsworth</item>
+        <item>Sandra Bullock</item>
+        <item>George Clooney</item>
+        <item>Jennifer Lawrence</item>
+        <item>Tom Cruise</item>
+        <item>Nicolas Cage</item>
+        <item>Anne Hathaway</item>
+        <item>Russell Crowe</item>
+        <item>Keanu Reeves</item>
+        <item>Julianne Moore</item>
+        <item>Liam Nelson</item>
+        <item>Jennifer Aniston</item>
+        <item>Chris Evans</item>
+        <item>Jessica Chastain</item>
+        <item>Eddie Murphy</item>
+        <item>Keira Knightley</item>
+        <item>Mark Wahlberg</item>
+        <item>Zendaya</item>
+        <!-- Sports icons -->
+        <item>Michael Jordan</item>
+        <item>Lionel Messi</item>
+        <item>Serena Williams</item>
+        <item>Usain Bolt</item>
+        <item>Muhammad Ali</item>
+        <item>LeBron James</item>
+        <item>Cristiano Ronaldo</item>
+        <item>Tiger Woods</item>
+        <item>Roger Federer</item>
+        <item>Michael Phelps</item>
+        <item>Diego Maradona</item>
+        <item>Kobe Bryant</item>
+        <item>Tom Brady</item>
+        <item>Wayne Gretzky</item>
+        <item>Jackie Robinson</item>
+        <item>David Beckham</item>
+        <item>Simone Biles</item>
+        <item>Rafael Nadal</item>
+        <item>Novak Đoković</item>
+        <item>Carl Lewis</item>
+        <item>Magic Johnson</item>
+        <item>Mike Tyson</item>
+        <item>Jim Brown</item>
+        <item>Ronaldo Nazario</item>
+        <item>Abby Wambach</item>
+        <item>Bo Jackson</item>
+        <item>Billie Jean King</item>
+        <item>Pele</item>
+        <item>Ronda Rousey</item>
+        <item>Joe Montana</item>
+        <item>Babe Ruth</item>
+        <item>Larry Bird</item>
+        <item>Roberto Clemente</item>
+        <item>George Best</item>
+        <item>Conor McGregor</item>
+        <item>Khabib Nurmagomedov</item>
+        <!-- Historical Figures -->
+        <item>Cleopatra</item>
+        <item>Marco Polo</item>
+        <item>Joan of Arc</item>
+        <item>Leon Trotsky</item>
+        <item>Mother Teresa</item>
+        <!-- Explorers -->
+        <item>Christopher Columbus</item>
+        <item>Ferdinand Magellan</item>
+        <item>Neil Armstrong</item>
+        <item>Yuri Gagarin</item>
+        <item>James Cook</item>
+        <!-- Technology Pioneers -->
+        <item>Bill Gates</item>
+        <item>Grace Hopper</item>
+        <item>Steve Wozniak</item>
     </string-array>
 
     <string-array name="fruit">
