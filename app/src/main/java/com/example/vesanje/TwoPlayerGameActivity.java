@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 
 public class TwoPlayerGameActivity extends AppCompatActivity {
 
@@ -49,7 +51,15 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 editTextWord.setText("");
                 editTextCategory.setText("");
-                disappearImage();
+
+                Random random = new Random();
+                int rand = random.nextInt(2);
+                if(rand==1){
+                    disappearVerticalImage();
+                }else{
+                    disappearHorizontalImage();
+                }
+
             }
         });
 
@@ -82,8 +92,8 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
                 // Scale down
                 ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
                         hangmanImageView,
-                        PropertyValuesHolder.ofFloat("scaleX", 0.5f),
-                        PropertyValuesHolder.ofFloat("scaleY", 0.5f)
+                        PropertyValuesHolder.ofFloat("scaleX", 0.3f),
+                        PropertyValuesHolder.ofFloat("scaleY", 0.3f)
                 );
                 scaleDown.setDuration(100);
 
@@ -120,7 +130,7 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         return word.matches("^[a-zA-ZćčđžšĆČĐŽŠ ]+$");
     }
 
-    private void disappearImage(){
+    private void disappearVerticalImage(){
         ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
                 hangmanImageView,
                 PropertyValuesHolder.ofFloat("scaleY", 0f)
@@ -131,6 +141,25 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(
                 hangmanImageView,
                 PropertyValuesHolder.ofFloat("scaleY", 1f)
+        );
+        scaleUp.setDuration(500);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playSequentially(scaleDown, scaleUp);
+        animatorSet.start();
+    }
+
+    private void disappearHorizontalImage(){
+        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
+                hangmanImageView,
+                PropertyValuesHolder.ofFloat("scaleX", 0f)
+        );
+        scaleDown.setDuration(100);
+
+        // Scale up
+        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(
+                hangmanImageView,
+                PropertyValuesHolder.ofFloat("scaleX", 1f)
         );
         scaleUp.setDuration(500);
 
