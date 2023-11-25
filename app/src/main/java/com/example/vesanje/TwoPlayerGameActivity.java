@@ -3,9 +3,11 @@ package com.example.vesanje;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -47,6 +49,7 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 editTextWord.setText("");
                 editTextCategory.setText("");
+                disappearImage();
             }
         });
 
@@ -72,6 +75,31 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
+
+        hangmanImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Scale down
+                ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
+                        hangmanImageView,
+                        PropertyValuesHolder.ofFloat("scaleX", 0.5f),
+                        PropertyValuesHolder.ofFloat("scaleY", 0.5f)
+                );
+                scaleDown.setDuration(100);
+
+                // Scale up
+                ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(
+                        hangmanImageView,
+                        PropertyValuesHolder.ofFloat("scaleX", 1f),
+                        PropertyValuesHolder.ofFloat("scaleY", 1f)
+                );
+                scaleUp.setDuration(500);
+
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playSequentially(scaleDown, scaleUp);
+                animatorSet.start();
+            }
+        });
     }
 
     private void startGame() {
@@ -92,9 +120,28 @@ public class TwoPlayerGameActivity extends AppCompatActivity {
         return word.matches("^[a-zA-ZćčđžšĆČĐŽŠ ]+$");
     }
 
+    private void disappearImage(){
+        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
+                hangmanImageView,
+                PropertyValuesHolder.ofFloat("scaleY", 0f)
+        );
+        scaleDown.setDuration(100);
+
+        // Scale up
+        ObjectAnimator scaleUp = ObjectAnimator.ofPropertyValuesHolder(
+                hangmanImageView,
+                PropertyValuesHolder.ofFloat("scaleY", 1f)
+        );
+        scaleUp.setDuration(500);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playSequentially(scaleDown, scaleUp);
+        animatorSet.start();
+    }
+
     private void moveImage() {
         float startY = hangmanImageView.getTranslationY();
-        float endY = startY - 60;
+        float endY = startY - 80;
 
         ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(hangmanImageView, "translationY", startY, endY);
         moveUpAnimator.setDuration(50);
