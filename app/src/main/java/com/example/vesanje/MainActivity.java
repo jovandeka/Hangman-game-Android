@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -33,15 +35,22 @@ public class MainActivity extends AppCompatActivity {
     private int remainingGuesses = 6;
     private List<TextView> letterTextViews;
     private AnimatorSet animatorSetWin;
+    private int consecutiveWinsCategory = 0;
+    private int consecutiveWinsRandom = 0;
+    private String categoryNow;
 
     private Button tryAgainButton;
     private TextView EndTextView;
     private TextView EndWordTextView;
     private TextView categoryTextView;
+    private TextView recordTextView;
+    private TextView winsTextView;
+    private TextView modeTextView;
     private ImageView categoryImageView;
     private GridLayout keyboardGrid;
     private ImageView backImageView;
     private LinearLayout lettersLinearLayout;
+    private LinearLayout consecutiveWinsLinearLayout;
     private ImageView drawHangman;
 
 
@@ -55,20 +64,29 @@ public class MainActivity extends AppCompatActivity {
         EndTextView = findViewById(R.id.EndTextView);
         EndWordTextView = findViewById(R.id.EndWordTextView);
         categoryTextView = findViewById(R.id.categoryTextView);
+        recordTextView = findViewById(R.id.recordTextView);
+        winsTextView = findViewById(R.id.winsTextView);
+        modeTextView = findViewById(R.id.modeTextView);
         categoryImageView = findViewById(R.id.categoryImageView);
         keyboardGrid = findViewById(R.id.keyboardGrid);
         backImageView = findViewById(R.id.backImageView);
         lettersLinearLayout = findViewById(R.id.lettersLinearLayout);
+        consecutiveWinsLinearLayout = findViewById(R.id.consecutiveWinsLinearLayout);
 
         letterTextViews = new ArrayList<>();
 
         Intent intent = getIntent();
         if (intent.hasExtra("category")) {
+            modeTextView.setText("CATEGORY MODE");
             String category = intent.getStringExtra("category");
+            categoryNow = category;
             categoryTextView.setText(category);
             categoryImageView.setImageResource(getResources().getIdentifier(category, "drawable", getPackageName()));
+            displayWinsCategory(category);
             loadWordList(category);
         }else if(intent.hasExtra("categoryPvp")) {
+            consecutiveWinsLinearLayout.setVisibility(View.GONE);
+            modeTextView.setText("PvP MODE");
             String word = intent.getStringExtra("word");
             String categoryPvp = intent.getStringExtra("categoryPvp");
             String category = categoryPvp.replaceAll("\\s+", " ");
@@ -79,11 +97,13 @@ public class MainActivity extends AppCompatActivity {
             }
             loadWord(word);
         }else if(intent.hasExtra("categoryRand")) {
+            modeTextView.setText("RANDOM MODE");
             String word = intent.getStringExtra("word");
             String categoryRand = intent.getStringExtra("categoryRand");
             String category = categoryRand.replaceAll("\\s+", " ");
             categoryTextView.setText(category);
             categoryImageView.setImageResource(getResources().getIdentifier(category, "drawable", getPackageName()));
+            displayWinsRandom();
             loadWord(word);
         }else {
             loadWordList("country");
@@ -259,9 +279,61 @@ public class MainActivity extends AppCompatActivity {
         return letterTextView;
     }
 
-    private void checkGameStatus() {
+    private void displayWinsRandom(){
+        int record = ConsecutiveWinsManager.getConsecutiveWinsRandom(this);
+        if(record>=consecutiveWinsRandom){
+            recordTextView.setText("Record: "+record);
+            winsTextView.setText("Wins: "+consecutiveWinsRandom);
+        }else{
+            ConsecutiveWinsManager.setConsecutiveWinsRandom(this, consecutiveWinsRandom);
+            recordTextView.setText("Record: "+consecutiveWinsRandom);
+            winsTextView.setText("Wins: "+consecutiveWinsRandom);
+            animateTextColor(recordTextView, getResources().getColor(R.color.green), 2000);
+        }
+    }
 
+    private void displayWinsCategory(String category){
+        int record = ConsecutiveWinsManager.getConsecutiveWins(this,category);
+        if(record>=consecutiveWinsCategory){
+            recordTextView.setText("Record: "+record);
+            winsTextView.setText("Wins: "+consecutiveWinsCategory);
+        }else{
+            ConsecutiveWinsManager.setConsecutiveWins(this, category, consecutiveWinsCategory);
+            recordTextView.setText("Record: "+consecutiveWinsCategory);
+            winsTextView.setText("Wins: "+consecutiveWinsCategory);
+            animateTextColor(recordTextView, getResources().getColor(R.color.green), 2000);
+        }
+    }
+    public static void animateTextColor(TextView textView, int targetColor, int duration) {
+        int startColor = textView.getCurrentTextColor();
+
+        ObjectAnimator colorAnimator = ObjectAnimator.ofObject(
+                textView,
+                "textColor",
+                new ArgbEvaluator(),
+                targetColor,
+                startColor
+        );
+        colorAnimator.setDuration(duration);
+
+        colorAnimator.start();
+    }
+
+
+    private void checkGameStatus() {
+        Intent intent = getIntent();
         if (guessedWord.toString().equals(secretWord)) {
+
+            if(intent.hasExtra("categoryRand")) {
+                consecutiveWinsRandom++;
+                displayWinsRandom();
+                animateTextColor(winsTextView, getResources().getColor(R.color.green), 2000);
+
+            }else if(intent.hasExtra("category")){
+                consecutiveWinsCategory++;
+                displayWinsCategory(categoryNow);
+                animateTextColor(winsTextView, getResources().getColor(R.color.green), 2000);
+            }
 
             EndTextView.setAlpha(0f);
             tryAgainButton.setAlpha(0f);
@@ -279,6 +351,20 @@ public class MainActivity extends AppCompatActivity {
             animateLayoutParamsChange();
 
         } else if (remainingGuesses == 0) {
+
+            if(intent.hasExtra("categoryRand")) {
+                if(consecutiveWinsRandom!=0) {
+                    animateTextColor(winsTextView, getResources().getColor(R.color.wrong_red), 2000);
+                }
+                consecutiveWinsRandom = 0;
+                displayWinsRandom();
+            }else if(intent.hasExtra("category")){
+                if(consecutiveWinsCategory!=0) {
+                    animateTextColor(winsTextView, getResources().getColor(R.color.wrong_red), 2000);
+                }
+                consecutiveWinsCategory = 0;
+                displayWinsCategory(categoryNow);
+            }
             EndTextView.setAlpha(0f);
             EndWordTextView.setAlpha(0f);
             tryAgainButton.setAlpha(0f);
