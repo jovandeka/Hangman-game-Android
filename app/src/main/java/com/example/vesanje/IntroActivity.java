@@ -35,8 +35,9 @@ public class IntroActivity extends AppCompatActivity {
             String name = categoriesNames[i];
             int img = getResources().getIdentifier(name, "drawable", getPackageName());
             int count = countCategory(name);
+            int record = ConsecutiveWinsManager.getConsecutiveWins(this, name);
 
-            CategoryItem category = new CategoryItem(name, img, count);
+            CategoryItem category = new CategoryItem(name, img, count, record);
 
             categoriesList.add(category);
         }

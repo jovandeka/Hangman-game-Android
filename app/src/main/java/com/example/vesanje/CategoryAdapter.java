@@ -42,6 +42,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         holder.categoryNameTextView.setText("GUESS THE "+category.getCategoryName().toUpperCase());
         holder.itemCountTextView.setText(String.valueOf(category.getItemCount()));
         holder.categoryImageView.setImageResource(category.getImageResourceId());
+        holder.itemRecordTextView.setText("Record: "+category.getItemRecord());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             final CategoryItem currentItem = categories.get(position);
@@ -64,6 +65,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         TextView categoryNameTextView;
         TextView itemCountTextView;
         ImageView categoryImageView;
+        TextView itemRecordTextView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,6 +73,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             categoryNameTextView = itemView.findViewById(R.id.categoryNameTextView);
             itemCountTextView = itemView.findViewById(R.id.countWordsTV);
             categoryImageView = itemView.findViewById(R.id.categoryImageView);
+            itemRecordTextView = itemView.findViewById(R.id.recordTV);
         }
     }
 
