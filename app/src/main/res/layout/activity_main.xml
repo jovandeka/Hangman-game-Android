@@ -60,7 +60,7 @@
         android:layout_marginTop="15dp"
         android:elevation="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/modeTextView"
         app:srcCompat="@drawable/undo2" />
 
     <GridLayout
@@ -243,7 +243,7 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -254,7 +254,6 @@
             android:id="@+id/lettersLinearLayout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -286,7 +285,7 @@
         android:id="@+id/categoryLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/category_bg"
         android:gravity="center"
         android:orientation="vertical"
@@ -326,7 +325,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/categoryLinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/modeTextView"
+        app:layout_constraintStart_toEndOf="@+id/categoryLinearLayout"
         app:layout_constraintTop_toTopOf="@+id/categoryLinearLayout">
 
         <TextView
@@ -366,14 +365,18 @@
         android:id="@+id/modeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:background="@color/darker_orange"
+        android:background="@drawable/mode_name_bg"
         android:fontFamily="@font/audiowide"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:text="MODE"
-        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
