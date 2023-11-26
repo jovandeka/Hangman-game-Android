@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
             ConsecutiveWinsManager.setConsecutiveWinsRandom(this, consecutiveWinsRandom);
             recordTextView.setText("Record: "+consecutiveWinsRandom);
             winsTextView.setText("Wins: "+consecutiveWinsRandom);
-            animateTextColor(recordTextView, getResources().getColor(R.color.green), 4000);
+            animateTextColor(recordTextView, getResources().getColor(R.color.green), 3000);
         }
     }
 
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
             ConsecutiveWinsManager.setConsecutiveWins(this, category, consecutiveWinsCategory);
             recordTextView.setText("Record: "+consecutiveWinsCategory);
             winsTextView.setText("Wins: "+consecutiveWinsCategory);
-            animateTextColor(recordTextView, getResources().getColor(R.color.green), 4000);
+            animateTextColor(recordTextView, getResources().getColor(R.color.green), 3000);
         }
     }
     public static void animateTextColor(TextView textView, int targetColor, int duration) {
@@ -327,12 +327,12 @@ public class MainActivity extends AppCompatActivity {
             if(intent.hasExtra("categoryRand")) {
                 consecutiveWinsRandom++;
                 displayWinsRandom();
-                animateTextColor(winsTextView, getResources().getColor(R.color.green), 4000);
+                animateTextColor(winsTextView, getResources().getColor(R.color.green), 3000);
 
             }else if(intent.hasExtra("category")){
                 consecutiveWinsCategory++;
                 displayWinsCategory(categoryNow);
-                animateTextColor(winsTextView, getResources().getColor(R.color.green), 4000);
+                animateTextColor(winsTextView, getResources().getColor(R.color.green), 3000);
             }
 
             EndTextView.setAlpha(0f);
@@ -354,13 +354,13 @@ public class MainActivity extends AppCompatActivity {
 
             if(intent.hasExtra("categoryRand")) {
                 if(consecutiveWinsRandom!=0) {
-                    animateTextColor(winsTextView, getResources().getColor(R.color.wrong_red), 4000);
+                    animateTextColor(winsTextView, getResources().getColor(R.color.wrong_red), 3000);
                 }
                 consecutiveWinsRandom = 0;
                 displayWinsRandom();
             }else if(intent.hasExtra("category")){
                 if(consecutiveWinsCategory!=0) {
-                    animateTextColor(winsTextView, getResources().getColor(R.color.wrong_red), 4000);
+                    animateTextColor(winsTextView, getResources().getColor(R.color.wrong_red), 3000);
                 }
                 consecutiveWinsCategory = 0;
                 displayWinsCategory(categoryNow);
