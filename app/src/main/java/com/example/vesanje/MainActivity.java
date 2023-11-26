@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent.hasExtra("category")) {
-            modeTextView.setText("CATEGORY MODE");
+            modeTextView.setVisibility(View.GONE);
             String category = intent.getStringExtra("category");
             categoryNow = category;
             categoryTextView.setText(category);
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             loadWordList(category);
         }else if(intent.hasExtra("categoryPvp")) {
             consecutiveWinsLinearLayout.setVisibility(View.GONE);
-            modeTextView.setText("PvP MODE");
+            modeTextView.setText("2 PLAYER MODE");
             String word = intent.getStringExtra("word");
             String categoryPvp = intent.getStringExtra("categoryPvp");
             String category = categoryPvp.replaceAll("\\s+", " ");
