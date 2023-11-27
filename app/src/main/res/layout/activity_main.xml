@@ -334,10 +334,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_bold"
             android:gravity="center"
-            android:padding="5dp"
-            android:text="Consecutive wins:"
+            android:padding="2.5dp"
+            android:text="WIN STREAK"
             android:textColor="@color/beige"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/recordTextView"
@@ -345,6 +345,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_bold"
             android:gravity="center"
+            android:padding="2.5dp"
             android:text="Record: 0"
             android:textColor="@color/beige"
             android:textSize="14sp" />
@@ -355,8 +356,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_bold"
             android:gravity="center"
-            android:paddingTop="5dp"
-            android:text="Wins: 0"
+            android:padding="2.5dp"
+            android:text="Now: 0"
             android:textColor="@color/beige"
             android:textSize="14sp" />
     </LinearLayout>

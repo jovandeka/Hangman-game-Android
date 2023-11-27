@@ -283,11 +283,11 @@ public class MainActivity extends AppCompatActivity {
         int record = ConsecutiveWinsManager.getConsecutiveWinsRandom(this);
         if(record>=consecutiveWinsRandom){
             recordTextView.setText("Record: "+record);
-            winsTextView.setText("Wins: "+consecutiveWinsRandom);
+            winsTextView.setText("Now: "+consecutiveWinsRandom);
         }else{
             ConsecutiveWinsManager.setConsecutiveWinsRandom(this, consecutiveWinsRandom);
             recordTextView.setText("Record: "+consecutiveWinsRandom);
-            winsTextView.setText("Wins: "+consecutiveWinsRandom);
+            winsTextView.setText("Now: "+consecutiveWinsRandom);
             animateTextColor(recordTextView, getResources().getColor(R.color.green), 3000);
         }
     }
@@ -296,11 +296,11 @@ public class MainActivity extends AppCompatActivity {
         int record = ConsecutiveWinsManager.getConsecutiveWins(this,category);
         if(record>=consecutiveWinsCategory){
             recordTextView.setText("Record: "+record);
-            winsTextView.setText("Wins: "+consecutiveWinsCategory);
+            winsTextView.setText("Now: "+consecutiveWinsCategory);
         }else{
             ConsecutiveWinsManager.setConsecutiveWins(this, category, consecutiveWinsCategory);
             recordTextView.setText("Record: "+consecutiveWinsCategory);
-            winsTextView.setText("Wins: "+consecutiveWinsCategory);
+            winsTextView.setText("Now: "+consecutiveWinsCategory);
             animateTextColor(recordTextView, getResources().getColor(R.color.green), 3000);
         }
     }
