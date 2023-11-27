@@ -336,7 +336,7 @@
             android:gravity="center"
             android:padding="2.5dp"
             android:text="WIN STREAK"
-            android:textColor="@color/beige"
+            android:textColor="@color/pale_yellow"
             android:textSize="16sp" />
 
         <TextView
