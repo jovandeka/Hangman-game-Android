@@ -9,48 +9,51 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/playAgainButton"
-        android:background="@drawable/play_again_green"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/play_again_green"
         android:fontFamily="@font/audiowide"
         android:text="Play Again"
         android:textColor="@color/pale_black"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:textSize="30sp"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/EndTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
         tools:ignore="NotSibling" />
 
     <TextView
         android:id="@+id/EndTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/play_regular"
         android:text=""
         android:textColor="@color/pale_yellow"
-        android:fontFamily="@font/play_regular"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/EndWordTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playAgainButton"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/EndWordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/play_regular"
         android:text=""
         android:textColor="@color/pale_yellow"
-        android:fontFamily="@font/play_regular"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/keyboardGrid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EndTextView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/backImageView"
@@ -67,7 +70,7 @@
         android:id="@+id/keyboardGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:columnCount="11"
         android:rowCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -239,83 +242,34 @@
             android:text="Ž" />
     </GridLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+    <TextView
+        android:id="@+id/modeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/mode_name_bg"
+        android:fontFamily="@font/audiowide"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="MODE"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="25dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/drawHangmanImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryLinearLayout">
-
-        <LinearLayout
-            android:id="@+id/lettersLinearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/letterTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:background="@color/orange"
-                android:padding="8dp"
-                android:textColor="@color/orange"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <ImageView
-        android:id="@+id/drawHangmanImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        app:srcCompat="@drawable/stick_hangman_6_construction" />
-
-    <LinearLayout
-        android:id="@+id/categoryLinearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/category_bg"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modeTextView">
-
-        <ImageView
-            android:id="@+id/categoryImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/question" />
-
-        <TextView
-            android:id="@+id/categoryTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/play_bold"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-    </LinearLayout>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/backImageView"
+        app:layout_constraintTop_toBottomOf="@+id/modeTextView" />
 
     <LinearLayout
         android:id="@+id/consecutiveWinsLinearLayout"
@@ -362,22 +316,82 @@
             android:textSize="14sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/modeTextView"
+    <LinearLayout
+        android:id="@+id/categoryLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/mode_name_bg"
-        android:fontFamily="@font/audiowide"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:text="MODE"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/category_bg"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/modeTextView">
+
+        <ImageView
+            android:id="@+id/categoryImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/question" />
+
+        <TextView
+            android:id="@+id/categoryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/play_bold"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryLinearLayout">
+
+        <LinearLayout
+            android:id="@+id/lettersLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@color/orange"
+                android:padding="8dp"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/drawHangmanImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:srcCompat="@drawable/stick_hangman_6_construction" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
